@@ -2,106 +2,169 @@
 	"products": [
 		{
 			"id": 1,
-			"name": "13 inç MacBook Pro",
-			"description": "Apple M1 çip, 13 inç MacBook Pro’ya inanılmaz bir hız ve güç kazandırıyor. 2,8 kata kadar daha yüksek CPU performansı. 5 kata kadar daha hızlı grafik teknolojileri. En gelişmiş Neural Engine birimimiz sayesinde 11 kata kadar daha hızlı yapay öğrenme. Ve gün boyunca devam etmenizi sağlayan 20 saate kadar pil ömrü. En sevilen profesyonel dizüstü bilgisayarımız şimdi bambaşka bir seviyede.",
-			"productImage": "/images/macbook-pro.jpeg",
-			"price": 17499,
+			"name": "Clockwork Orange",
+			"author": "Anthony Burgess",
+			"description": "A Clockwork Orange is a dystopian satirical black comedy novel by English writer Anthony Burgess, published in 1962.",
+			"productImage": "/images/books/clockworkorange.jpeg",
 			"category": 1,
-			"isFavorite": true
+			"isInStock": true
 		},
 		{
 			"id": 2,
-			"name": "64GB iPad",
-			"description": "True Tone özellikli 10.2 inç Retina ekran olağanüstü ayrıntılar, canlı renkler ve rahat bir görüntüleme deneyimi sunuyor.",
-			"productImage": "/images/64gb-ipad.jpeg",
-			"price": 4799,
+			"name": "Death on the Nile",
+			"author": "Agatha Christie",
+			"description": "Death on the Nile is a work of detective fiction by British writer Agatha Christie, published in the UK by the Collins Crime Club.",
+			"productImage": "/images/books/death-on-the-nile-poirot.jpeg",
 			"category": 1,
-			"isFavorite": false
+			"isInStock": false
 		},
 		{
 			"id": 3,
-			"name": "iPhone 13 Pro",
-			"description": "Kameramızda bugüne kadarki en büyük gelişme. Yepyeni Pro kamera sistemi. Gelişmiş loş ışık performansı. Makro çekimle inanılmaz ayrıntılar.",
-			"productImage": "/images/iphone-13.png",
-			"price": 19999,
+			"name": "Harry Potter And The Sorcerer'S Stone",
+			"author": "J.K. Rowling ",
+			"description": "Harry Potter has no idea how famous he is. That's because he's being raised by his miserable aunt and uncle who are terrified Harry will learn that he's really a wizard, just as his parents were.",
+			"productImage": "/images/books/harrypotter.jpeg",
 			"category": 1,
-			"isFavorite": false
+			"isInStock": false
 		},
 		{
 			"id": 4,
-			"name": "Regular - Tar",
-			"description": "Kaft'ın en sade hali. Aynı kalıp, aynı kumaş, aynı kalitedeki tişörtü dilersen desensiz basic olarak da alabilirsin.",
-			"productImage": "/images/kaft-regular-tar.jpg",
-			"price": 105,
-			"category": 2,
-			"isFavorite": false
+			"name": "Hobbit",
+			"author": "J. R. R. Tolkien",
+			"description": "The unwilling hero of The Hobbit, Bilbo Baggins, is persuaded to join Thorin and his 12 dwarfs to recover their stolen treasure, which is being guarded by the dragon Smaug.",
+			"productImage": "/images/books/hobbit.jpeg",
+			"category": 1,
+			"isInStock": false
 		},
 		{
 			"id": 5,
-			"name": "Relax - Off White",
-			"description": "Modern bir tasarım çizgisinde, oversize ve rahat bir kullanım için hazırlandı.\nRegular kalıp tişörtlere oranla daha kalın bir kumaşa sahip olmasına rağmen yüksek hava geçirgenliği sayesinde ferah bir kullanım sunar.",
-			"productImage": "/images/kaft-relax-off-white.jpg",
-			"price": 125,
-			"category": 2,
-			"isFavorite": true
+			"name": "The Alchemist",
+			"author": "Paulo Coelho",
+			"description": "The Alchemist is a classic novel in which a boy named Santiago embarks on a journey seeking treasure in the Egyptian pyramids.",
+			"productImage": "/images/books/thealchemist.jpeg",
+			"category": 1,
+			"isInStock": true
 		},
 		{
 			"id": 6,
-			"name": "Kendine İyi Davran Güzel İnsan",
-			"description": "Sen kendin için bir şey yapmıyorsan kim senin için bir şeyler yapacak? Sen kendi yaralarını kendin sarmadan, kim sana yardım edebilir gerçekten? Eğer başkaları için önemli olmadığını hissediyorsan, ilkönce kendine şunu sormalısın: Ben kendim için önemli miyim?\nSeninle bir yolculuğa çıkacağız bu kitapla birlikte. Her insanın içinde bir sağlıklı bir de sağlıksız bir “ben” vardır. Sağlıksız ben kontrolü devraldığında, insan kendine zarar verir. İşte bu kitapla çıkacağımız yolculuğun amacı, içindeki güzel insana yani sağlıklı bene ulaşmak.\nBu yolculukta, kaygılarınla baş etmek ve kafaya takmamak için hangi yöntemleri kullanabileceğini, olumsuz düşüncelerini nasıl kontrol edebileceğini, sağlıklı ilişkilerini geliştirirken, sana zarar veren zehirli insanlardan kendini nasıl koruyabileceğini, hangi alanlarda mücadele etmenin anlamlı olduğunu, hangi alanlarda hayatı ve getirdiklerini kabullenmen gerektiğini, içindeki değersizlik hissini nasıl yenebileceğini ve kendini nasıl dönüştürebileceğini keşfedeceksin.\nHazır mısın bu yolculuğa?",
-			"productImage": "/images/kendine-iyi-davran-guzel-insan.jpg",
-			"price": 15.6,
-			"category": 3,
-			"isFavorite": true
+			"name": "Better Homes & Gardens",
+			"editor": "Stephen Orr",
+			"description": "Better Homes & Gardens is your go-to destination for home decor advice, DIY projects, gardening, cleaning tips, and recipes.",
+			"productImage": "/images/magazines/bhgcover.jpeg",
+			"category": 2,
+			"isInStock": false
 		},
 		{
 			"id": 7,
-			"name": "Ne İçin Varsan Onun İçin Yaşa - Bir Arayışın Romanı",
-			"description": "“Tüm muhteşem hikâyeler iki şekilde başlar. Ya bir insan bir yolculuğa çıkar ya da şehre bir yabancı gelir.”\n- Tolstoy\nDemirden keskin bir düdük sesi yükseldi o sırada. Ayrılığın ciddiyeti buz gibi sardı bedenimi. Kapılar kapandı sonra... Çantam sağımda, yalnızlık karşımda...\nGidiyorum!\nHayır bir saniye!\nFilmlerde böyle olmazdı ki... Son anda muhakkak bir kalma sebebi yazardı senarist. Tam hareket etmek üzereyken trenden atlayıverirdi esas adam.\nOysa şimdi rayların üzerinde kaymaya başlamıştı bile tren... Ayrılığın göğsüme oturan ağırlığıyla camdan dışarı bakıp el sallayan insanlarla dolu peronu izledim.\nBeni uğurlamaya gelmeyen herkese teşekkür eder gibi bir damla gözyaşı bıraktım oraya.",
-			"productImage": "/images/ne-icin-varsan-onun-icin-yasa.jpg",
-			"price": 16.8,
-			"category": 3,
-			"isFavorite": true
+			"name": "Bon Appétit",
+			"editor": "Dawn Davis",
+			"description": "Cook with confidence. Enjoy your food. Find recipes, search our encyclopedia of cooking tips and ingredients.",
+			"productImage": "/images/magazines/bonapetitcover.jpeg",
+			"category": 2,
+			"isInStock": false
 		},
 		{
 			"id": 8,
-			"name": "Bilinmeyen Bir Kadının Mektubu",
-			"description": "Stefan Zweig Bilinmeyen Bir Kadının Mektubu (Brief einer Unbekannten) adlı uzun öyküsünü 1920'li yılların ilk yarısında kaleme aldı. Bilinmeyen Bir Kadının Mektubu'nun kadın kahramanını sadece uzun bir mektubun yazarı olarak tanıyoruz. Kadının hayatı boyunca sevmiş olduğu erkek için kaleme aldığı bu mektubun \"gönderen\"inin adı yoktur. Mektubun başında tek bir hitap vardır: \"Sana, beni asla tanımamış olan sana\". Kadın büyük tutkusunu hep bir \"bilinmeyen\" olarak, yani tek başına yaşamaya razıdır, bu aşk öyküsünde \"taraflar\" değil, sadece tek bir \"taraf\" vardır. Böylesine, gerçek anlamda aşk denilebilir mi? Zweig okurunu, bir kez daha, insan psikolojisinde eşine pek rastlanmayan bir yolculuğa davet ediyor. Bu yeni yolculuğun sonunda \"mutlak aşk\" kavramının şimdiye kadar bilinmeyen kıyılarına varmayı amaçlamış olması da bir ihtimal!",
-			"productImage": "/images/bilinmeyen-bir-kadinin-mektubu.jpg",
-			"price": 3.9,
+			"name": "Rolling Stone",
+			"editor": "Jason Fine",
+			"description": "Rolling Stone is a monthly American magazine focused on popular culture.",
+			"productImage": "/images/magazines/rslogo.jpeg",
+			"category": 2,
+			"isInStock": true
+		},
+		{
+			"id": 9,
+			"name": "National Geographic",
+			"editor": "Susan Goldberg",
+			"description": "Monthly magazine of geography, archaeology, anthropology, and exploration.",
+			"productImage": "/images/magazines/nationalgeographiccover.jpeg",
+			"category": 2,
+			"isInStock": false
+		},
+		{
+			"id": 10,
+			"name": "Time",
+			"editor": "Susan Goldberg",
+			"description": "An American news magazine and news website published and based in New York City. For nearly a century, it was published.",
+			"productImage": "/images/magazines/Time_logo.svg",
+			"category": 2,
+			"isInStock": false
+		},
+		{
+			"id": 11,
+			"name": "Financial Times",
+			"editor": "Roula Khalaf",
+			"description": "An international British business newspaper. It is a newspaper published in London. Periodically 24 places.",
+			"productImage": "/images/newspapers/financialtimes.png",
 			"category": 3,
-			"isFavorite": true
+			"isInStock": false
+		},
+		{
+			"id": 11,
+			"name": "New York Times",
+			"editor": "Joe Kahn",
+			"description": "The New York Times is an American daily newspaper founded on September 18, 1851 and printed in New York City.",
+			"productImage": "/images/newspapers/nytimes.png",
+			"category": 3,
+			"isInStock": true
+		},
+		{
+			"id": 12,
+			"name": "The Guardian",
+			"editor": "George Harrison",
+			"description": "The Guardian is a British daily newspaper. It was founded in 1821 by the Scott Trust as The Manchester Guardian.",
+			"productImage": "/images/newspapers/the-guardian.png",
+			"category": 3,
+			"isInStock": false
+		},
+		{
+			"id": 13,
+			"name": "The Times",
+			"editor": "Alice Hope",
+			"description": "The Times is a British newspaper founded in 1785. It has been coming out under this name since 1788.",
+			"productImage": "/images/newspapers/thetimes.png",
+			"category": 3,
+			"isInStock": true
+		},
+		{
+			"id": 14,
+			"name": "Washington Post",
+			"editor": "Alice Cooper",
+			"description": "The Washington Post is the largest and oldest newspaper in Washington, the capital of the United States.",
+			"productImage": "/images/newspapers/Washington_Post.png",
+			"category": 3,
+			"isInStock": false
 		}
 	],
 	"categories": [
 		{
 			"id": 1,
 			"name": "Book",
-			"description": "Herkes için elektronik."
+			"description": "Books: Lorem ipsum dolor sit amet!"
 		},
 		{
 			"id": 2,
-			"name": "Newspaper",
-			"description": "Herkes için moda."
+			"name": "Magazines",
+			"description": "Magazines: Consectetur adipisicing elit?"
 		},
 		{
 			"id": 3,
-			"name": "Magazine",
-			"description": "Herkes için kitap."
+			"name": "NewsPapers",
+			"description": "NewsPapers: Sit itaque quisquam dolore."
 		}
 	],
 	"sliders": [
 		{
-			"productId": 6,
-			"image": "/images/dr-slider.jpg"
+			"productId": 2,
+			"src": "/images/bookslider.jpg"
 		},
 		{
-			"productId": 1,
-			"image": "/images/apple-slider.png"
+			"productId": 8,
+			"src": "/images/magazineslider.png"
 		},
 		{
 			"productId": 4,
-			"image": "/images/kaft-slider.png"
+			"src": "/images/newspaperslider.png"
 		}
 	]
 }

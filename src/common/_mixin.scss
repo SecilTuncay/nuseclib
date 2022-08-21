@@ -1,0 +1,11 @@
+@use "./defaults.scss";
+@mixin transitionProperty {
+	transition-duration: 0.5s;
+	transition-property: all;
+}
+
+@mixin boxShadow {
+	box-shadow: 5px 6px 13px 3px rgba(66, 66, 66, 0.74);
+	-webkit-box-shadow: 5px 6px 13px 3px rgba(66, 66, 66, 0.74);
+	-moz-box-shadow: 5px 6px 13px 3px rgba(66, 66, 66, 0.74);
+}

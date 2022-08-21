@@ -1,0 +1,111 @@
+@import "../src/common/defaults";
+@import "../src/common/mixin";
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: $font-family;
+}
+
+p {
+	margin: 0;
+}
+
+body {
+	margin: 0;
+	height: 100vh;
+}
+
+h1 {
+	font-size: $page-header-font-size;
+}
+
+.AppWrapper {
+	margin: 0;
+	height: auto;
+	font-size: $default-font-size;
+	background-color: $dark-main-bg-color;
+}
+.header-app {
+	&__navbar {
+		background-color: $dark-banner-color;
+	}
+	&__brand {
+		display: flex;
+		align-items: center;
+		@media (max-width: 575.98px) {
+			font-size: 0.9rem;
+		}
+		img {
+			width: 40px;
+		}
+	}
+	&__signin {
+		background: $light-blue;
+		color: white;
+		padding: 0.5rem 1rem;
+		border-radius: 10px;
+		background: rgb(54, 168, 238);
+		background: linear-gradient(
+			225deg,
+			rgba(54, 168, 238, 1) 3%,
+			rgba(58, 216, 211, 1) 80%
+		);
+		@include transitionProperty;
+		&:hover {
+			border-radius: 0px;
+			@include transitionProperty;
+			background: rgb(54, 168, 238);
+			background: linear-gradient(
+				48deg,
+				rgba(54, 168, 238, 1) 3%,
+				rgba(58, 216, 211, 1) 80%
+			);
+		}
+	}
+	&__login {
+		&_text {
+			color: white;
+			font-size: 0.9rem;
+		}
+		&:hover {
+			color: $light-blue !important;
+		}
+	}
+
+	/*  a {
+      text-decoration: none;
+      color: $dark-font-default-color;
+      padding: 0.5rem 0rem !important;
+      &:hover {
+          text-decoration: none !important;
+          color: $dark-hover-color !important;
+      }
+  } */
+}
+/*BOOTSTRAP DROPDOWN*/
+.dropdown-menu {
+	top: 100%;
+	min-width: 8rem;
+	border-radius: 0;
+	padding: 0;
+	margin: 0;
+	background-color: $light-blue;
+	border-radius: 0 0 5px 5px;
+	border: none;
+}
+.dropdown-toggle::after {
+	margin-left: 2rem;
+}
+#header-app_dropdown {
+	border-radius: 5px 5px 0 0;
+	font-size: $header-font-size;
+}
+#header-app_dropdown:hover {
+	background: $light-blue;
+}
+footer {
+	background: $dark-banner-color;
+	font-size: 12px;
+	color: $dark-font-default-color;
+}
