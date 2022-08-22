@@ -1,28 +1,34 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { getAllLibData } from "../features/libitems/libitemsSlice";
-import { fetchAllLibData } from "../features/libitems/libitemsSlice";
+import { getCategoryData } from "../features/libitems/libitemsSlice";
+import { fetchCategoryData } from "../features/libitems/libitemsSlice";
 import { Nav } from "react-bootstrap";
 
 function Categories() {
   const dispatch = useDispatch();
-  const allLibData = useSelector(getAllLibData);
-  const categoriesInfo = allLibData.categories;
-  debugger
-  dispatch(fetchAllLibData());
+  const categoriesInfo = useSelector(getCategoryData);
+  console.log("file: Categories.js - line 10 - categoriesInfo", categoriesInfo);
+
+  useEffect(() => {
+    dispatch(fetchCategoryData());
+  }, []);
 
   return (
     <section className="mt-4">
       <div className="container d-flex flex-row justify-content-center ">
-        <div className="categories--container d-flex flex-column justify-content-center mt-4">
-          <h2 className="text-center mb-4">Categories</h2>
+        <div className="categories--container d-flex flex-column justify-content-center mt-4 text-white">
+          <h4 className="text-center mb-4">Categories</h4>
           <div className="d-flex flex-row justify-content-center">
             {categoriesInfo &&
               categoriesInfo.map((category) => {
                 const { id, name, description } = category;
                 return (
                   <Nav.Link key={id} href={`/categories/${id}/products`}>
-                    <button key={id} type="button" className="btn categories--btn m-2">
+                    <button
+                      key={id}
+                      type="button"
+                      className="btn categories--btn m-2"
+                    >
                       {name}
                     </button>
                   </Nav.Link>

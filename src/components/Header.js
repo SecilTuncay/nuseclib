@@ -6,7 +6,6 @@ import { library } from "@fortawesome/fontawesome-svg-core";
 import { fas } from "@fortawesome/free-solid-svg-icons";
 library.add(fas);
 
-
 function Header() {
   return (
     <div className="header-app">
@@ -31,8 +30,17 @@ function Header() {
                 <NavDropdown.Item href="#action/3.2">
                   Magazines
                 </NavDropdown.Item>
-                <NavDropdown.Item href="#action/3.3">Newspapers</NavDropdown.Item>
+                <NavDropdown.Item href="#action/3.3">
+                  Newspapers
+                </NavDropdown.Item>
               </NavDropdown>
+            </Nav>
+            <Nav className="me-auto">
+              <Nav.Link eventKey={2} href={`/available`}>
+                <div>
+                  <span className="ml-2">Available Items</span>
+                </div>
+              </Nav.Link>
             </Nav>
             <Nav className="ml-auto">
               <Nav.Link eventKey={2} href={`/login`}>
@@ -46,12 +54,11 @@ function Header() {
                 <span className="header-app__signin ml-2">Sign In</span>
               </Nav.Link>
             </Nav>
-
           </Navbar.Collapse>
         </Container>
       </Navbar>
     </div>
-  )
+  );
 }
 
 export default Header;

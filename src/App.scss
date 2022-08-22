@@ -20,6 +20,10 @@ h1 {
 	font-size: $page-header-font-size;
 }
 
+h4 {
+	font-size:1.2rem;
+}
+
 .AppWrapper {
 	margin: 0;
 	height: auto;
@@ -103,6 +107,135 @@ h1 {
 }
 #header-app_dropdown:hover {
 	background: $light-blue;
+}
+
+/*LibItem*/
+.libitem-card {
+	color: $dark-font-default-color;
+	height: auto;
+	background-color: $dark-banner-color;
+	&__header {
+			padding: 0.75rem 0.5rem;
+	}
+	&__image {
+			object-fit: contain;
+			@include transitionProperty;
+			&:hover {
+					transform: scale(1.35);
+					@include transitionProperty;
+			}
+	}
+	&__badge {
+			width: 1.5rem;
+			height: 1.5rem;
+			font-size: $default-font-size;
+			//background: url("./images/circle-solid.svg") no-repeat;
+			padding: 0.2rem 0rem;
+	}
+	&__link {
+			padding: 0!important;
+	}
+	&__overview {
+			font-size: $small-font-size;
+			overflow: hidden;
+			height: 2.8rem;
+	}
+	&__title {
+			font-size: $card-header-font-size;
+			display: block;
+			height: 2rem;
+			overflow: hidden;
+	}
+	&__more {
+			font-size: $small-font-size;
+			text-align: right;
+			span {
+					font-size: $default-font-size;
+			}
+			a {
+					color: white;
+					text-decoration: none;
+			}
+	}
+	&__btns {
+			font-size: $default-font-size;
+			cursor: pointer;
+	}
+	&__popularity {
+			font-size: $small-font-size;
+	}
+}
+/*LibItem Card Ends*/
+/*LibItem Detail*/
+.libitem-detail {
+	background-color: #eeeeee;
+	border: none;
+	font-size:$default-font-size;
+	&__imdb {
+			img {
+					width: 3.5rem;
+					@include boxShadow;
+			}
+			&:hover {
+					text-decoration: none;
+			}
+	}
+
+	
+	&__name {
+			font-size: 1rem;
+			font-weight: bold;
+			span {
+					font-weight: 200;
+					font-size: 1.5rem;
+			}
+			
+	
+	}
+	&__author {
+			font-style: italic;
+			font-size: $header-font-size;
+			
+	}
+
+	&__summary {
+			span {
+					font-weight: bold;
+					display: block;
+			}
+		
+	}
+	&__image {
+			height: 15rem;
+			object-fit: cover;
+			width: auto;
+			border-radius: 0.5rem;
+			@include boxShadow;
+			@media (max-width: 575.98px) { 
+					font-size:1rem;  
+					
+			}
+			@media (min-width: 576px) and (max-width: 1199.98px) { 
+					height: 20rem; 
+			}
+	}
+	&__btns {
+			background: #343a40d6;
+			border-radius: 50%;
+			padding: 0.3rem 0.4rem;
+			font-size: 1rem;
+			display: block;
+			width: 2rem;
+			text-align: center;
+	}
+}
+/*LibItem Detail Ends*/
+.movie-wrapper {
+	min-height: 80vh;
+	h1 {
+			color: $dark-font-default-color;
+			font-size: $page-header-font-size;
+	}
 }
 footer {
 	background: $dark-banner-color;

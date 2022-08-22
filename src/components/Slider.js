@@ -1,20 +1,16 @@
 import React, { useEffect } from "react";
 import { Carousel, Nav } from "react-bootstrap";
-import { getAllLibData } from "../features/libitems/libitemsSlice";
-import { fetchAllLibData } from "../features/libitems/libitemsSlice";
+import { getSliderData } from "../features/libitems/libitemsSlice";
+import { fetchSliderData } from "../features/libitems/libitemsSlice";
 import { useDispatch, useSelector } from "react-redux";
-import error from "../images/page-error.png";
 
 function Slider() {
   const dispatch = useDispatch();
-  const allLibData = useSelector(getAllLibData);
-  console.log('allLibData: ', allLibData);
-  const sliderInfo = allLibData.sliders;
-
-
+  const sliderInfo = useSelector(getSliderData);
+  console.log("file: Slider.js - line 11 - sliderInfo", sliderInfo);
 
   useEffect(() => {
-    dispatch(fetchAllLibData());
+    dispatch(fetchSliderData());
   }, []);
 
   return (
@@ -23,9 +19,8 @@ function Slider() {
         <Carousel prevLabel="" nextLabel="" indicators={false}>
           {sliderInfo &&
             sliderInfo.map((slider) => {
-
               const { productId, src } = slider;
-              console.log('src: ', src);
+              console.log("src: ", src);
               return (
                 <Carousel.Item key={productId} interval={1500}>
                   <Nav>

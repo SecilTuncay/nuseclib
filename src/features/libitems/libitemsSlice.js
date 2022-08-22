@@ -1,29 +1,44 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import Axios from "axios";
 
-
 export const fetchAllLibData = createAsyncThunk(
   "libItems/fetchAllLibData",
   async () => {
     const response = await Axios.get("../data/libdata.json");
     return response.data;
   }
-)
-
-
-
-/* export const fetchAsyncLibItemDetail = createAsyncThunk(
-  "movies/fetchAsyncLibItemDetail",
+);
+export const fetchAsyncLibItem = createAsyncThunk(
+  "libItems/fetchAsyncLibItem",
   async (id) => {
-    const response = await movieDatabaseApi.get(
-      `movie/${id}?api_key=${APIKey}`
+    const response = await Axios.get("../data/libdata.json");
+    const tempID = response.data.items.findIndex(
+      (item) => item.id === parseInt(id)
     );
-    return response.data;
+    return response.data.items[tempID];
   }
-); */
+);
+export const fetchSliderData = createAsyncThunk(
+  "libItems/fetchSliderData",
+  async () => {
+    const response = await Axios.get("../data/libdata.json");
+    return response.data.sliders;
+  }
+);
+
+export const fetchCategoryData = createAsyncThunk(
+  "libItems/fetchCategoryData",
+  async () => {
+    const response = await Axios.get("../data/libdata.json");
+    return response.data.categories;
+  }
+);
 
 const initialState = {
   allLibItems: [],
+  item: [],
+  sliders: [],
+  categories: [],
   selectedLibItem: {},
   isLoading: true,
 };
@@ -33,84 +48,75 @@ const libItemSlice = createSlice({
   initialState,
   reducers: {
     removeSelectedItem: (state) => {
-      state.selectedMovie = {};
+      state.selectedLibItem = {};
     },
-    removeSelectedItemCredit: (state) => {
-      state.selectedMovieCredit = {};
-    },
-    removeSelectedItemVideo: (state) => {
-      state.selectedMovieVideo = {};
-    },
-    addToFavorites: (state, { payload }) => {
-      const existingFavIndex = state.favoriteMovies.findIndex(
+
+    manageStock(state, { payload }) {
+      const tempID = state.allLibItems.items.findIndex(
         (item) => item.id === payload.id
       );
-
-      if (existingFavIndex >= 0) {
-        state.favoriteMovies[existingFavIndex] = {
-          ...state.favoriteMovies[existingFavIndex],
-        };
-      } else {
-        state.favoriteMovies.push(payload);
-      }
-      localStorage.setItem(
-        "favoriteMovies",
-        JSON.stringify(state.favoriteMovies)
-      );
+      state.allLibItems.items[tempID].isInStock =
+        !state.allLibItems.items[tempID].isInStock;
+      return state;
     },
-    removeFromFavorites(state, action) {
-      state.favoriteMovies.map((favMovie) => {
-        if (favMovie.id === action.payload.id) {
-          const nextFavMovies = state.favoriteMovies.filter(
-            (item) => item.id !== favMovie.id
-          );
-          state.favoriteMovies = nextFavMovies;
-        }
-        localStorage.setItem(
-          "favoriteMovies",
-          JSON.stringify(state.favoriteMovies)
-        );
-        return state;
-      });
-    },
-
   },
   extraReducers: {
-    /*Fetch Trending Movies start*/
-    [fetchAllLibData.pending]: () => {
+    /*Fetch All Library Data start*/
+    [fetchAllLibData.pending]: (state) => {
       console.log("Pending");
+      return { ...state, isLoading: true };
     },
     [fetchAllLibData.fulfilled]: (state, { payload }) => {
-
-      return { ...state, allLibItems: payload };
+      return { ...state, allLibItems: payload, isLoading: false };
     },
     [fetchAllLibData.rejected]: () => {
       console.log("Rejected!");
     },
     /*end*/
-    /*Fetch Movie Detail start
-    [fetchAsyncLibItemDetail.pending]: (state) => {
-      console.log("Searching");
+    /*Fetch Lib Item Data start*/
+    [fetchAsyncLibItem.pending]: (state) => {
+      console.log("Pending");
       return { ...state, isLoading: true };
     },
-    [fetchAsyncLibItemDetail.fulfilled]: (state, { payload }) => {
-      console.log("Fetched Movie Successfully!");
-      return { ...state, selectedMovie: payload, isLoading: false };
+    [fetchAsyncLibItem.fulfilled]: (state, { payload }) => {
+      return { ...state, item: payload, isLoading: false };
     },
-    [fetchAsyncLibItemDetail.rejected]: (state, { payload }) => {
-      console.log("Not Found!");
+    [fetchAsyncLibItem.rejected]: () => {
+      console.log("Rejected!");
     },
-    end*/
+    /*end*/
+    /*Fetch Sliders Data start*/
+    [fetchSliderData.pending]: (state) => {
+      console.log("Pending");
+      return { ...state, isLoading: true };
+    },
+    [fetchSliderData.fulfilled]: (state, { payload }) => {
+      return { ...state, sliders: payload, isLoading: false };
+    },
+    [fetchSliderData.rejected]: () => {
+      console.log("Rejected!");
+    },
+    /*end*/
+    /*Fetch Categories Data start*/
+    [fetchCategoryData.pending]: (state) => {
+      console.log("Pending");
+      return { ...state, isLoading: true };
+    },
+    [fetchCategoryData.fulfilled]: (state, { payload }) => {
+      return { ...state, categories: payload, isLoading: false };
+    },
+    [fetchCategoryData.rejected]: () => {
+      console.log("Rejected!");
+    },
+    /*end*/
   },
 });
 
-export const {
-  removeSelectedItem,
-  addToFavorites,
-  removeFromFavorites,
-} = libItemSlice.actions;
+export const { removeSelectedItem, manageStock } = libItemSlice.actions;
 
 export const getAllLibData = (state) => state.libItems.allLibItems;
-export const getSelectedLibItems = (state) => state.libItems.selectedLibItem;
+export const getSliderData = (state) => state.libItems.sliders;
+export const getCategoryData = (state) => state.libItems.categories;
+export const getSelectedLibItem = (state) => state.libItems.item;
 export const getIsLoading = (state) => state.libItems.isLoading;
 export default libItemSlice.reducer;
