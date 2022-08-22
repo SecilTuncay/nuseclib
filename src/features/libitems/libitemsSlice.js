@@ -76,10 +76,9 @@ const libItemSlice = createSlice({
     /*Fetch Lib Item Data start*/
     [fetchAsyncLibItem.pending]: (state) => {
       console.log("Pending");
-      return { ...state, isLoading: true };
     },
     [fetchAsyncLibItem.fulfilled]: (state, { payload }) => {
-      return { ...state, item: payload, isLoading: false };
+      return { ...state, item: payload };
     },
     [fetchAsyncLibItem.rejected]: () => {
       console.log("Rejected!");
@@ -88,10 +87,10 @@ const libItemSlice = createSlice({
     /*Fetch Sliders Data start*/
     [fetchSliderData.pending]: (state) => {
       console.log("Pending");
-      return { ...state, isLoading: true };
+
     },
     [fetchSliderData.fulfilled]: (state, { payload }) => {
-      return { ...state, sliders: payload, isLoading: false };
+      return { ...state, sliders: payload };
     },
     [fetchSliderData.rejected]: () => {
       console.log("Rejected!");
@@ -100,10 +99,10 @@ const libItemSlice = createSlice({
     /*Fetch Categories Data start*/
     [fetchCategoryData.pending]: (state) => {
       console.log("Pending");
-      return { ...state, isLoading: true };
+
     },
     [fetchCategoryData.fulfilled]: (state, { payload }) => {
-      return { ...state, categories: payload, isLoading: false };
+      return { ...state, categories: payload };
     },
     [fetchCategoryData.rejected]: () => {
       console.log("Rejected!");

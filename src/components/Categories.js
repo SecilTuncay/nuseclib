@@ -23,11 +23,11 @@ function Categories() {
               categoriesInfo.map((category) => {
                 const { id, name, description } = category;
                 return (
-                  <Nav.Link key={id} href={`/categories/${id}/products`}>
+                  <Nav.Link key={id} href={`/category/${id}`}>
                     <button
                       key={id}
                       type="button"
-                      className="btn categories--btn m-2"
+                      className="btn categories__btn m-2"
                     >
                       {name}
                     </button>

@@ -1,5 +1,6 @@
 @import "../src/common/defaults";
 @import "../src/common/mixin";
+@import "./scss/config"; // include all of Bootstrap
 * {
 	margin: 0;
 	padding: 0;
@@ -21,7 +22,7 @@ h1 {
 }
 
 h4 {
-	font-size:1.2rem;
+	font-size: 1.2rem;
 }
 
 .AppWrapper {
@@ -48,7 +49,7 @@ h4 {
 		background: $light-blue;
 		color: white;
 		padding: 0.5rem 1rem;
-		border-radius: 10px;
+		border-radius: $border-radius-btn;
 		background: rgb(54, 168, 238);
 		background: linear-gradient(
 			225deg,
@@ -91,78 +92,109 @@ h4 {
 .dropdown-menu {
 	top: 100%;
 	min-width: 8rem;
-	border-radius: 0;
 	padding: 0;
 	margin: 0;
 	background-color: $light-blue;
-	border-radius: 0 0 5px 5px;
+	border-radius: 0 0 $border-radius-btn $border-radius-btn;
 	border: none;
 }
 .dropdown-toggle::after {
 	margin-left: 2rem;
 }
 #header-app_dropdown {
-	border-radius: 5px 5px 0 0;
+	border-radius: $border-radius-btn $border-radius-btn 0 0;
 	font-size: $header-font-size;
 }
 #header-app_dropdown:hover {
 	background: $light-blue;
 }
+.categories {
+	&__btn {
+		border: 1px solid transparent;
+		background: $gray-300;
+		box-shadow: none;
+		transition: all 500ms ease;
+		&:hover {
+			background: $light-blue;
+			color: #fff;
+			box-shadow: $box-shadow;
+			transform: scale(1.1);
+		}
+	}
+}
 
+.categories--container {
+	h2 {
+		font-size: 1.3rem;
+	}
+}
+.detail-background {
+	height: 85vh;
+}
+.opacity-layer {
+	background: rgb(105, 194, 232);
+	background: linear-gradient(
+		90deg,
+		rgba(105, 194, 232, 0.5690476874343487) 0%,
+		rgba(105, 194, 232, 1) 20%,
+		rgba(105, 194, 232, 1) 80%,
+		rgba(105, 194, 232, 0.5746499283307073) 100%
+	);
+}
 /*LibItem*/
 .libitem-card {
 	color: $dark-font-default-color;
 	height: auto;
 	background-color: $dark-banner-color;
 	&__header {
-			padding: 0.75rem 0.5rem;
+		padding: 0.75rem 0.5rem;
 	}
 	&__image {
-			object-fit: contain;
+		object-fit: contain;
+		@include transitionProperty;
+		&:hover {
+			transform: scale(1.35);
 			@include transitionProperty;
-			&:hover {
-					transform: scale(1.35);
-					@include transitionProperty;
-			}
+		}
 	}
 	&__badge {
-			width: 1.5rem;
-			height: 1.5rem;
-			font-size: $default-font-size;
-			//background: url("./images/circle-solid.svg") no-repeat;
-			padding: 0.2rem 0rem;
+		width: 1.5rem;
+		height: 1.5rem;
+		font-size: $default-font-size;
+		//background: url("./images/circle-solid.svg") no-repeat;
+		padding: 0.2rem 0rem;
 	}
 	&__link {
-			padding: 0!important;
+		padding: 0 !important;
 	}
 	&__overview {
-			font-size: $small-font-size;
-			overflow: hidden;
-			height: 2.8rem;
+		font-size: $small-font-size;
+		overflow: hidden;
+		height: 2.8rem;
 	}
 	&__title {
-			font-size: $card-header-font-size;
-			display: block;
-			height: 2rem;
-			overflow: hidden;
+		font-size: $card-header-font-size;
+		display: block;
+		height: 2rem;
+		overflow: hidden;
 	}
 	&__more {
-			font-size: $small-font-size;
-			text-align: right;
-			span {
-					font-size: $default-font-size;
-			}
-			a {
-					color: white;
-					text-decoration: none;
-			}
+		font-size: $small-font-size;
+		text-align: right;
+		span {
+			font-size: $default-font-size;
+		}
+		a {
+			color: white;
+			text-decoration: none;
+		}
 	}
 	&__btns {
-			font-size: $default-font-size;
-			cursor: pointer;
+		font-size: $default-font-size;
+		cursor: pointer;
 	}
 	&__popularity {
-			font-size: $small-font-size;
+		font-size: $small-font-size;
 	}
 }
 /*LibItem Card Ends*/
@@ -170,71 +202,65 @@ h4 {
 .libitem-detail {
 	background-color: #eeeeee;
 	border: none;
-	font-size:$default-font-size;
+	font-size: $default-font-size;
 	&__imdb {
-			img {
-					width: 3.5rem;
-					@include boxShadow;
-			}
-			&:hover {
-					text-decoration: none;
-			}
+		img {
+			width: 3.5rem;
+			@include boxShadow;
+		}
+		&:hover {
+			text-decoration: none;
+		}
 	}
 
-	
 	&__name {
-			font-size: 1rem;
-			font-weight: bold;
-			span {
-					font-weight: 200;
-					font-size: 1.5rem;
-			}
-			
-	
+		font-size: 1rem;
+		font-weight: bold;
+		span {
+			font-weight: 200;
+			font-size: 1.5rem;
+		}
 	}
 	&__author {
-			font-style: italic;
-			font-size: $header-font-size;
-			
+		font-style: italic;
+		font-size: $header-font-size;
 	}
 
 	&__summary {
-			span {
-					font-weight: bold;
-					display: block;
-			}
-		
+		span {
+			font-weight: bold;
+			display: block;
+		}
 	}
 	&__image {
-			height: 15rem;
-			object-fit: cover;
-			width: auto;
-			border-radius: 0.5rem;
-			@include boxShadow;
-			@media (max-width: 575.98px) { 
-					font-size:1rem;  
-					
-			}
-			@media (min-width: 576px) and (max-width: 1199.98px) { 
-					height: 20rem; 
-			}
+		height: 30rem;
+		object-fit: cover;
+		width: auto;
+		border-radius: $border-radius-btn;
+		@include boxShadow;
+		@media (max-width: 575.98px) {
+			font-size: 1rem;
+		}
+		@media (min-width: 576px) and (max-width: 1199.98px) {
+			height: 20rem;
+		}
 	}
 	&__btns {
-			background: #343a40d6;
-			border-radius: 50%;
-			padding: 0.3rem 0.4rem;
-			font-size: 1rem;
-			display: block;
-			width: 2rem;
-			text-align: center;
+		background: #343a40d6;
+		border-radius: $border-radius-btn;
+		padding: 0.3rem 0.4rem;
+		font-size: 1rem;
+		display: block;
+		width: 2rem;
+		text-align: center;
 	}
 }
 /*LibItem Detail Ends*/
 .movie-wrapper {
 	min-height: 80vh;
 	h1 {
-			color: $dark-font-default-color;
-			font-size: $page-header-font-size;
+		color: $dark-font-default-color;
+		font-size: $page-header-font-size;
 	}
 }
 footer {

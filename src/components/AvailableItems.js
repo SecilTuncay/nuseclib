@@ -24,13 +24,13 @@ const AvailableItems = () => {
     <>
       <div className="container movie-wrapper">
         <h1 className="my-4 text-center text-white">Available Items</h1>
-        <div className="row justify-content-center">
+        <div className="row justify-content-start">
           {availableItems &&
             availableItems.map((libItem, index) => (
               <LibItemCard
                 key={index}
                 itemData={libItem}
-                //isInStock={isInStock(libItem.id)}
+              //isInStock={isInStock(libItem.id)}
               />
             ))}
         </div>

@@ -25,7 +25,7 @@ function Slider() {
                 <Carousel.Item key={productId} interval={1500}>
                   <Nav>
                     <Nav.Link href={`/products/${productId}`}>
-                      <img className="d-block w-100" src={src} alt="" />
+                      <img className="d-block w-100 text-center" src={`../${src}`} alt="" />
                     </Nav.Link>
                   </Nav>
                 </Carousel.Item>

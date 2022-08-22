@@ -11,6 +11,7 @@ import LibItemMainPage from "./components/LibItemMainPage";
 import LibItemDetail from "./components/LibItemDetail";
 import AvailableItems from "./components/AvailableItems";
 import "./App.scss";
+import CategoryPage from "./components/CategoryPage";
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
           <Route path="/error" element={<PageNotFound />} />
           <Route path="/loading" element={<Loading />} />
           <Route path="/libitem/:itemId" element={<LibItemDetail />} />
+          <Route path="/category/:categoryId" element={<CategoryPage />} />
         </Routes>
         <Footer />
       </BrowserRouter>

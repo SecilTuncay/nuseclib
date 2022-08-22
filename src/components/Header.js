@@ -26,11 +26,11 @@ function Header() {
           <Navbar.Collapse id="header-navbar-id">
             <Nav className="me-auto">
               <NavDropdown title="Categories" id="header-app_dropdown">
-                <NavDropdown.Item href={`/login`}>Books</NavDropdown.Item>
-                <NavDropdown.Item href="#action/3.2">
+                <NavDropdown.Item key="1" href={`/category/1`}>Books</NavDropdown.Item>
+                <NavDropdown.Item key="2" href={`/category/2`}>
                   Magazines
                 </NavDropdown.Item>
-                <NavDropdown.Item href="#action/3.3">
+                <NavDropdown.Item key="2" href={`/category/3`}>
                   Newspapers
                 </NavDropdown.Item>
               </NavDropdown>
@@ -57,7 +57,7 @@ function Header() {
           </Navbar.Collapse>
         </Container>
       </Navbar>
-    </div>
+    </div >
   );
 }
 

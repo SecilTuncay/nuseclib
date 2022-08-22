@@ -14,6 +14,7 @@ const LibItemCard = (props) => {
   const { itemData } = props;
   const { id, name, author, description, productImage, category, isInStock } =
     itemData;
+  console.log('productImage: ', productImage);
   //const [isStock, setIsStock] = useState(props.isInStock);
   const dispatch = useDispatch();
 
@@ -47,7 +48,7 @@ const LibItemCard = (props) => {
               {isInStock ? (
                 <div>
                   <span>kütüphanede </span>
-                  <FontAwesomeIcon icon="fa-solid fa-minus" />
+                  <FontAwesomeIcon icon="fa-solid fa-cart-arrow-down" />
                 </div>
               ) : (
                 <div>
@@ -64,7 +65,7 @@ const LibItemCard = (props) => {
         >
           <Card.Img
             className="libitem-card__image"
-            src={productImage}
+            src={`../${productImage}`}
           ></Card.Img>
         </Link>
         <Card.Body>

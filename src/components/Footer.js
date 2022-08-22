@@ -4,7 +4,7 @@ import { faTwitter, faLinkedin, faInstagram } from "@fortawesome/free-brands-svg
 
 function Footer() {
   return (
-    <footer className="mt-4">
+    <footer>
       <div className="container d-md-flex p-3 justify-content-between align-items-center">
         <div className="me-md-auto text-center text-md-start">
           <div>

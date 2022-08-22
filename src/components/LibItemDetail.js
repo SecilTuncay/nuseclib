@@ -15,37 +15,24 @@ import {
   fetchAsyncLibItem,
   fetchAllLibData,
 } from "../features/libitems/libitemsSlice";
-import {} from "../features/libitems/libitemsSlice";
+import { } from "../features/libitems/libitemsSlice";
 
 const LibItemDetail = () => {
   const { itemId } = useParams();
-  console.log("file: LibItemDetail.js - line 22 - itemId", itemId);
   const dispatch = useDispatch();
   const allLibData = useSelector(getAllLibData).items;
-  console.log("file: LibItemMainPage.js - line 9 - allLibData", allLibData);
 
   const selectedItem = allLibData.filter((item) => item.id == itemId);
   const { id, name, author, description, productImage, category, isInStock } =
     selectedItem[0];
+  const url = "http://localhost:3000";
 
   useEffect(() => {
     dispatch(fetchAllLibData());
   }, [dispatch, isInStock]);
 
-  // const selectedItem = useSelector(getSelectedLibItem);
-  console.log("file: LibItemDetail.js - line 20 - selectedItem", selectedItem);
-
-  console.log("file: LibItemDetail.js - line 37 - name", name);
-
-  /*   console.log("file: LibItemDetail.js - line 22 - name", name);
-  useEffect(() => {
-    dispatch(fetchAsyncLibItem(itemId));
-    return () => {
-      dispatch(removeSelectedItem());
-    };
-  }, [dispatch, isInStock]); */
-
   const isLoading = useSelector(getIsLoading);
+  console.log('isLoading: ', isLoading);
 
   /*  const baseImgUrl = "https://image.tmdb.org/t/p";
   const size = "w500";
@@ -64,8 +51,15 @@ const LibItemDetail = () => {
   };
 
   return (
-    <>
-      <div className="opacity-layer w-100 h-100">
+
+    <div
+      className="position-relative detail-background"
+      style={{
+        backgroundImage: `url(${productImage})`,
+        backgroundSize: "contain",
+      }}
+    >
+      <div className="position-absolute opacity-layer w-100 h-100 pt-5">
         <div className="container mr-auto">
           {isLoading ? (
             <Loading />
@@ -73,8 +67,8 @@ const LibItemDetail = () => {
             <div className="row pt-4">
               <Card className="libitem-detail">
                 <div className="row no-gutters">
-                  <div className="col-sm-5 p-4">
-                    <Card.Img className="libitem-detail__image"></Card.Img>
+                  <div className="col-sm-5 p-4 text-center">
+                    <Card.Img className="libitem-detail__image" src={url + `${productImage}`}></Card.Img>
                   </div>
                   <div className="col-sm-7">
                     <Card.Body>
@@ -114,7 +108,8 @@ const LibItemDetail = () => {
           )}
         </div>
       </div>
-    </>
+    </div>
+
   );
 };
 
