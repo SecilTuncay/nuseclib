@@ -97,21 +97,32 @@ h4 {
 	background-color: $light-blue;
 	border-radius: 0 0 $border-radius-btn $border-radius-btn;
 	border: none;
+	
 }
 .dropdown-toggle::after {
-	margin-left: 2rem;
+	margin-left: 2.15rem;
+}
+
+.dropdown-item{
+	color:$dark-banner-color;
+	font-size: $default-font-size;
+}
+.dropdown-item:hover{
+	border-radius: $border-radius-btn;
 }
 #header-app_dropdown {
 	border-radius: $border-radius-btn $border-radius-btn 0 0;
-	font-size: $header-font-size;
-}
-#header-app_dropdown:hover {
+	font-size: $default-font-size;
 	background: $light-blue;
+	color:$dark-banner-color;
+
 }
+
 .categories {
 	&__btn {
 		border: 1px solid transparent;
 		background: $gray-300;
+		font-size: $default-font-size;
 		box-shadow: none;
 		transition: all 500ms ease;
 		&:hover {

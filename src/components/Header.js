@@ -26,11 +26,13 @@ function Header() {
           <Navbar.Collapse id="header-navbar-id">
             <Nav className="me-auto">
               <NavDropdown title="Categories" id="header-app_dropdown">
-                <NavDropdown.Item key="1" href={`/category/1`}>Books</NavDropdown.Item>
+                <NavDropdown.Item key="1" href={`/category/1`}>
+                  Books
+                </NavDropdown.Item>
                 <NavDropdown.Item key="2" href={`/category/2`}>
                   Magazines
                 </NavDropdown.Item>
-                <NavDropdown.Item key="2" href={`/category/3`}>
+                <NavDropdown.Item key="3" href={`/category/3`}>
                   Newspapers
                 </NavDropdown.Item>
               </NavDropdown>
@@ -44,20 +46,17 @@ function Header() {
             </Nav>
             <Nav className="ml-auto">
               <Nav.Link eventKey={2} href={`/login`}>
-                <div className="header-app__login">
+                <div className="header-app__signin">
                   <FontAwesomeIcon icon="fa-solid fa-right-to-bracket" />
 
                   <span className="ml-2">Log In</span>
                 </div>
               </Nav.Link>
-              <Nav.Link eventKey={2} href={`/login`}>
-                <span className="header-app__signin ml-2">Sign In</span>
-              </Nav.Link>
             </Nav>
           </Navbar.Collapse>
         </Container>
       </Navbar>
-    </div >
+    </div>
   );
 }
 

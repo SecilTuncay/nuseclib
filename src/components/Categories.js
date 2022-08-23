@@ -16,7 +16,7 @@ function Categories() {
   return (
     <section className="mt-4">
       <div className="container d-flex flex-row justify-content-center ">
-        <div className="categories--container d-flex flex-column justify-content-center mt-4 text-white">
+        <div className="categories--container d-flex flex-column justify-content-center text-white">
           <h4 className="text-center mb-4">Categories</h4>
           <div className="d-flex flex-row justify-content-center">
             {categoriesInfo &&
@@ -27,7 +27,7 @@ function Categories() {
                     <button
                       key={id}
                       type="button"
-                      className="btn categories__btn m-2"
+                      className="btn categories__btn"
                     >
                       {name}
                     </button>
