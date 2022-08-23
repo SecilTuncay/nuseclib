@@ -4,9 +4,15 @@ import logoIcon from "../images/logo_icon.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { fas } from "@fortawesome/free-solid-svg-icons";
+import { useDispatch, useSelector } from "react-redux";
+import { logout } from "../features/libitems/libitemsSlice";
 library.add(fas);
 
-function Header() {
+const Header = () => {
+  const dispatch = useDispatch();
+  const logoutHandler = () => {
+    dispatch(logout());
+  };
   return (
     <div className="header-app">
       <Navbar
@@ -45,11 +51,11 @@ function Header() {
               </Nav.Link>
             </Nav>
             <Nav className="ml-auto">
-              <Nav.Link eventKey={2} href={`/login`}>
+              <Nav.Link eventKey={2} href={`/login`} onClick={logoutHandler()}>
                 <div className="header-app__signin">
                   <FontAwesomeIcon icon="fa-solid fa-right-to-bracket" />
 
-                  <span className="ml-2">Log In</span>
+                  <span className="ml-2">Log Out</span>
                 </div>
               </Nav.Link>
             </Nav>
@@ -58,6 +64,6 @@ function Header() {
       </Navbar>
     </div>
   );
-}
+};
 
 export default Header;

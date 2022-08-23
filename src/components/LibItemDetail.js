@@ -15,7 +15,7 @@ import {
   fetchAsyncLibItem,
   fetchAllLibData,
 } from "../features/libitems/libitemsSlice";
-import { } from "../features/libitems/libitemsSlice";
+import {} from "../features/libitems/libitemsSlice";
 
 const LibItemDetail = () => {
   const { itemId } = useParams();
@@ -32,7 +32,7 @@ const LibItemDetail = () => {
   }, [dispatch, isInStock]);
 
   const isLoading = useSelector(getIsLoading);
-  console.log('isLoading: ', isLoading);
+  console.log("isLoading: ", isLoading);
 
   /*  const baseImgUrl = "https://image.tmdb.org/t/p";
   const size = "w500";
@@ -51,7 +51,6 @@ const LibItemDetail = () => {
   };
 
   return (
-
     <div
       className="position-relative detail-background"
       style={{
@@ -59,16 +58,19 @@ const LibItemDetail = () => {
         backgroundSize: "contain",
       }}
     >
-      <div className="position-absolute opacity-layer w-100 h-100 pt-5">
-        <div className="container mr-auto">
+      <div className="opacity-layer w-100 h-100 py-3">
+        <div className="container">
           {isLoading ? (
             <Loading />
           ) : (
-            <div className="row pt-4">
-              <Card className="libitem-detail">
+            <div className="row">
+              <Card className="libitem-detail mx-auto mt-4">
                 <div className="row no-gutters">
-                  <div className="col-sm-5 p-4 text-center">
-                    <Card.Img className="libitem-detail__image" src={url + `${productImage}`}></Card.Img>
+                  <div className="col-sm-5 py-4 text-center">
+                    <Card.Img
+                      className="libitem-detail__image"
+                      src={url + `${productImage}`}
+                    ></Card.Img>
                   </div>
                   <div className="col-sm-7">
                     <Card.Body>
@@ -77,28 +79,28 @@ const LibItemDetail = () => {
                         {author}
                       </div>
 
-                      <div className="d-flex mt-3 align-items-center">
+                      <div className="libitem-detail__summary mt-4">
+                        <span className="mb-2">Description : </span>
+                        <div>{description}</div>
+                      </div>
+                      <div className="mt-4">
                         <span
                           className="libitem-detail__btns mr-2 text-white"
                           onClick={addToStockHandler}
                         >
+                          Situation :
                           {isInStock ? (
-                            <div>
-                              <span>kütüphanede </span>
-                              <FontAwesomeIcon icon="fa-solid fa-minus" />
+                            <div className="text-success mt-2">
+                              <FontAwesomeIcon icon="fa-solid fa-circle-minus" />
+                              <span className="ml-2">Available</span>
                             </div>
                           ) : (
-                            <div>
-                              <span>kütüphanede değil </span>
-                              <FontAwesomeIcon icon="fa-solid fa-plus" />
+                            <div className="text-danger mt-2">
+                              <FontAwesomeIcon icon="fa-solid fa-circle-plus" />
+                              <span className="ml-2">Loaned</span>
                             </div>
                           )}
                         </span>
-                      </div>
-
-                      <div className="libitem-detail__summary mt-4">
-                        <span className="mb-2">Description : </span>
-                        <div>{description}</div>
                       </div>
                     </Card.Body>
                   </div>
@@ -109,7 +111,6 @@ const LibItemDetail = () => {
         </div>
       </div>
     </div>
-
   );
 };
 

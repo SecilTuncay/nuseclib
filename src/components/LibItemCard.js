@@ -14,7 +14,7 @@ const LibItemCard = (props) => {
   const { itemData } = props;
   const { id, name, author, description, productImage, category, isInStock } =
     itemData;
-  console.log('productImage: ', productImage);
+  console.log("productImage: ", productImage);
   //const [isStock, setIsStock] = useState(props.isInStock);
   const dispatch = useDispatch();
 
@@ -36,28 +36,20 @@ const LibItemCard = (props) => {
   return (
     <div className="col-lg-3 col-md-6 my-2 text-white">
       <Card className="libitem-card" key={id}>
-        <Card.Header className="d-flex justify-content-between libitem-card__header">
-          <div className="libitem-card__badge">
-            <span className="d-block text-center"> </span>
-          </div>
-          <div>
-            <span
-              className="libitem-card__btns text-info"
-              onClick={addToStockHandler}
-            >
-              {isInStock ? (
-                <div>
-                  <span>kütüphanede </span>
-                  <FontAwesomeIcon icon="fa-solid fa-cart-arrow-down" />
-                </div>
-              ) : (
-                <div>
-                  <span>kütüphanede değil </span>
-                  <FontAwesomeIcon icon="fa-solid fa-plus" />
-                </div>
-              )}
-            </span>
-          </div>
+        <Card.Header className="d-flex justify-content-end libitem-card__header">
+          <span className="libitem-card__btns" onClick={addToStockHandler}>
+            {isInStock ? (
+              <div className="text-success">
+                <span className="mr-2">Available</span>
+                <FontAwesomeIcon icon="fa-solid fa-circle-minus" />
+              </div>
+            ) : (
+              <div className="text-danger">
+                <span className="mr-2">Loaned</span>
+                <FontAwesomeIcon icon="fa-solid fa-circle-plus" />
+              </div>
+            )}
+          </span>
         </Card.Header>
         <Link
           className="libitem-card__link overflow-hidden"

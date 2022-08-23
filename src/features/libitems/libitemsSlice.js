@@ -35,6 +35,7 @@ export const fetchCategoryData = createAsyncThunk(
 );
 
 const initialState = {
+  user: { email: "deneme@deneme.com", password: "11235811", loggedIn: false },
   allLibItems: [],
   item: [],
   sliders: [],
@@ -47,11 +48,21 @@ const libItemSlice = createSlice({
   name: "libItems",
   initialState,
   reducers: {
+    /*login*/
+    login: (state, { payload }) => {
+      state.user = payload;
+    },
+    logout: (state) => {
+      state.user = {
+        email: "deneme@deneme.com",
+        password: "11235811",
+        loggedIn: false,
+      };
+    },
     removeSelectedItem: (state) => {
       state.selectedLibItem = {};
     },
-
-    manageStock(state, { payload }) {
+    manageStock: (state, { payload }) => {
       const tempID = state.allLibItems.items.findIndex(
         (item) => item.id === payload.id
       );
@@ -87,7 +98,6 @@ const libItemSlice = createSlice({
     /*Fetch Sliders Data start*/
     [fetchSliderData.pending]: (state) => {
       console.log("Pending");
-
     },
     [fetchSliderData.fulfilled]: (state, { payload }) => {
       return { ...state, sliders: payload };
@@ -99,7 +109,6 @@ const libItemSlice = createSlice({
     /*Fetch Categories Data start*/
     [fetchCategoryData.pending]: (state) => {
       console.log("Pending");
-
     },
     [fetchCategoryData.fulfilled]: (state, { payload }) => {
       return { ...state, categories: payload };
@@ -111,11 +120,13 @@ const libItemSlice = createSlice({
   },
 });
 
-export const { removeSelectedItem, manageStock } = libItemSlice.actions;
+export const { login, logout, removeSelectedItem, manageStock } =
+  libItemSlice.actions;
 
 export const getAllLibData = (state) => state.libItems.allLibItems;
 export const getSliderData = (state) => state.libItems.sliders;
 export const getCategoryData = (state) => state.libItems.categories;
 export const getSelectedLibItem = (state) => state.libItems.item;
 export const getIsLoading = (state) => state.libItems.isLoading;
+export const getUser = (state) => state.libItems.user;
 export default libItemSlice.reducer;
