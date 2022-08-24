@@ -1,11 +1,11 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-import Axios from "axios";
+import libDatabase from "../../common/apis/libDatabase"
 
 export const fetchAllLibData = createAsyncThunk(
   "libItems/fetchAllLibData",
   async () => {
-    const response = await Axios.get(
-      "https://my-json-server.typicode.com/SecilTuncay/demo/items"
+    const response = await libDatabase.get(
+      "/items"
     );
     return response.data;
   }
@@ -13,20 +13,17 @@ export const fetchAllLibData = createAsyncThunk(
 export const fetchAsyncLibItem = createAsyncThunk(
   "libItems/fetchAsyncLibItem",
   async (id) => {
-    const response = await Axios.get(
-      "https://my-json-server.typicode.com/SecilTuncay/demo/items"
+    const response = await libDatabase.get(
+      `/items/${id}`
     );
-    const tempID = response.data.items.findIndex(
-      (item) => item.id === parseInt(id)
-    );
-    return response.data.items[tempID];
+    return response.data
   }
 );
 export const fetchSliderData = createAsyncThunk(
   "libItems/fetchSliderData",
   async () => {
-    const response = await Axios.get(
-      "https://my-json-server.typicode.com/SecilTuncay/demo/sliders"
+    const response = await libDatabase.get(
+      "/sliders"
     );
     return response.data;
   }
@@ -35,8 +32,8 @@ export const fetchSliderData = createAsyncThunk(
 export const fetchCategoryData = createAsyncThunk(
   "libItems/fetchCategoryData",
   async () => {
-    const response = await Axios.get(
-      "https://my-json-server.typicode.com/SecilTuncay/demo/categories"
+    const response = await libDatabase.get(
+      "/categories"
     );
     return response.data;
   }

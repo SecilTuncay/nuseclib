@@ -13,6 +13,7 @@ import AvailableItems from "./components/AvailableItems";
 import { getUser } from "./features/libitems/libitemsSlice";
 import "./App.scss";
 import CategoryPage from "./components/CategoryPage";
+import Signup from "./components/Signup";
 
 function App() {
   /*  const user = useSelector(getUser);
@@ -28,6 +29,7 @@ function App() {
           <Route path="/available" exact element={<AvailableItems />} />
 
           <Route path="/login" exact element={<Login />} />
+          <Route path="/signup" exact element={<Signup />} />
 
           <Route path="/error" element={<PageNotFound />} />
           <Route path="/loading" element={<Loading />} />
