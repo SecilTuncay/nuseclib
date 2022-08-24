@@ -10,7 +10,8 @@ import Loading from "./Loading";
 
 function LibItemMainPage() {
   const dispatch = useDispatch();
-  const allLibData = useSelector(getAllLibData).items;
+  const allLibData = useSelector(getAllLibData);
+  console.log("file: LibItemMainPage.js - line 14 - allLibData", allLibData);
   const isLoading = useSelector(getIsLoading);
 
   useEffect(() => {

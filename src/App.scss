@@ -186,8 +186,10 @@ h4 {
 	&__title {
 		font-size: $card-header-font-size;
 		display: block;
-		height: 2rem;
-		overflow: hidden;
+	}
+	&__category {
+		font-size: $small-font-size;
+		display: block;
 	}
 	&__more {
 		font-size: $small-font-size;
@@ -228,6 +230,10 @@ h4 {
 		font-style: italic;
 		font-size: $header-font-size;
 	}
+	&__category {
+		font-size: $small-font-size;
+		color:$orange;
+	}
 
 	&__summary {
 		span {
@@ -238,8 +244,8 @@ h4 {
 	&__image {
 		
 		object-fit: cover;
-		width: 350px;
-    height: 330px;
+		width: 300px;
+    height: 454px;
 		border-radius: $border-radius-btn;
 	
 		@media (max-width: 575.98px) {
@@ -257,10 +263,18 @@ h4 {
 	}
 }
 /*LibItem Detail Ends*/
+/*Login Starts*/
 .login-wrap{
 	background-color: #9fa3a8;
 	border-radius: $border-radius-btn;
 }
+/*Login Ends*/
+/*Signup Starts*/
+.signup-wrap{
+	background-color: #9fa3a8;
+	border-radius: $border-radius-btn;
+}
+/*Signup Ends*/
 footer {
 	background: $dark-banner-color;
 	font-size: 12px;

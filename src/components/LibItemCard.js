@@ -14,15 +14,10 @@ const LibItemCard = (props) => {
   const { itemData } = props;
   const { id, name, author, description, productImage, category, isInStock } =
     itemData;
-  console.log("productImage: ", productImage);
-  //const [isStock, setIsStock] = useState(props.isInStock);
+
   const dispatch = useDispatch();
 
-  /* const baseImgUrl = "https://image.tmdb.org/t/p";
-  const size = "w500";
-  let tempPath = poster_path
-    ? `${baseImgUrl}/${size}${poster_path}`
-    : errorImage; */
+  const categoryNames = ["Books", "Magazines", "Newspapers"];
 
   const addToStockHandler = () => {
     dispatch(
@@ -61,7 +56,10 @@ const LibItemCard = (props) => {
           ></Card.Img>
         </Link>
         <Card.Body>
-          <Card.Title className="libitem-card__title mb-2">{name}</Card.Title>
+          <Card.Title className="libitem-card__title">{name}</Card.Title>
+          <Card.Text className="libitem-card__category mb-3">
+            {categoryNames[category - 1]}
+          </Card.Text>
           <Card.Text className="libitem-card__overview mb-2">
             {description}
           </Card.Text>

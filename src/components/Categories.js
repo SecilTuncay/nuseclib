@@ -7,7 +7,6 @@ import { Nav } from "react-bootstrap";
 function Categories() {
   const dispatch = useDispatch();
   const categoriesInfo = useSelector(getCategoryData);
-  console.log("file: Categories.js - line 10 - categoriesInfo", categoriesInfo);
 
   useEffect(() => {
     dispatch(fetchCategoryData());

@@ -4,14 +4,18 @@ import Axios from "axios";
 export const fetchAllLibData = createAsyncThunk(
   "libItems/fetchAllLibData",
   async () => {
-    const response = await Axios.get("../data/libdata.json");
+    const response = await Axios.get(
+      "https://my-json-server.typicode.com/SecilTuncay/demo/items"
+    );
     return response.data;
   }
 );
 export const fetchAsyncLibItem = createAsyncThunk(
   "libItems/fetchAsyncLibItem",
   async (id) => {
-    const response = await Axios.get("../data/libdata.json");
+    const response = await Axios.get(
+      "https://my-json-server.typicode.com/SecilTuncay/demo/items"
+    );
     const tempID = response.data.items.findIndex(
       (item) => item.id === parseInt(id)
     );
@@ -21,16 +25,20 @@ export const fetchAsyncLibItem = createAsyncThunk(
 export const fetchSliderData = createAsyncThunk(
   "libItems/fetchSliderData",
   async () => {
-    const response = await Axios.get("../data/libdata.json");
-    return response.data.sliders;
+    const response = await Axios.get(
+      "https://my-json-server.typicode.com/SecilTuncay/demo/sliders"
+    );
+    return response.data;
   }
 );
 
 export const fetchCategoryData = createAsyncThunk(
   "libItems/fetchCategoryData",
   async () => {
-    const response = await Axios.get("../data/libdata.json");
-    return response.data.categories;
+    const response = await Axios.get(
+      "https://my-json-server.typicode.com/SecilTuncay/demo/userInfo"
+    );
+    return response.data;
   }
 );
 

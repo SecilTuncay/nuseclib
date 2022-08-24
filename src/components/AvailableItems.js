@@ -10,16 +10,12 @@ import Loading from "./Loading";
 
 const AvailableItems = () => {
   const dispatch = useDispatch();
-  const allLibData = useSelector(getAllLibData).items;
+  const allLibData = useSelector(getAllLibData);
   const isLoading = useSelector(getIsLoading);
 
   let availableItems;
   if (allLibData) {
     availableItems = allLibData.filter((item) => item.isInStock);
-    console.log(
-      "file: AvailableItems.js - line 14 - availableItems",
-      availableItems
-    );
   }
   useEffect(() => {
     dispatch(fetchAllLibData());
@@ -32,7 +28,7 @@ const AvailableItems = () => {
         {isLoading ? (
           <Loading />
         ) : (
-          <div className="row justify-content-start">
+          <div className="row justify-content-start mb-3">
             {availableItems &&
               availableItems.map((libItem, index) => (
                 <LibItemCard

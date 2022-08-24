@@ -13,18 +13,14 @@ const CategoryPage = () => {
   const { categoryId } = useParams();
   console.log("categoryId: ", categoryId);
   const dispatch = useDispatch();
-  const allLibData = useSelector(getAllLibData).items;
+  const allLibData = useSelector(getAllLibData);
   const isLoading = useSelector(getIsLoading);
 
-  const categoryNames = ["Books", "Magazines", "News Papers"];
+  const categoryNames = ["Books", "Magazines", "Newspapers"];
   let categoryItems;
   if (allLibData) {
     categoryItems = allLibData.filter(
       (item) => item.category === parseInt(categoryId)
-    );
-    console.log(
-      "file: AvailableItems.js - line 14 - availableItems",
-      categoryItems
     );
   }
 

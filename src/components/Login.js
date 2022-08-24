@@ -14,7 +14,7 @@ const Login = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     debugger;
-    if (user.email == email && user.password == password) {
+    if (user.email === email && user.password === password) {
       dispatch(login({ loggedIn: true }));
     } else {
       console.log("hello");
