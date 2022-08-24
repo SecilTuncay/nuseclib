@@ -36,7 +36,7 @@ export const fetchCategoryData = createAsyncThunk(
   "libItems/fetchCategoryData",
   async () => {
     const response = await Axios.get(
-      "https://my-json-server.typicode.com/SecilTuncay/demo/userInfo"
+      "https://my-json-server.typicode.com/SecilTuncay/demo/categories"
     );
     return response.data;
   }

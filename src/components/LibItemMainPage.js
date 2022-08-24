@@ -24,7 +24,7 @@ function LibItemMainPage() {
       {isLoading ? (
         <Loading />
       ) : (
-        <div className="row">
+        <div className="row justify-content-start mb-3">
           {allLibData &&
             allLibData.map((libItem, index) => (
               <LibItemCard
