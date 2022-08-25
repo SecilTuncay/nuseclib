@@ -31,6 +31,7 @@ h4 {
 	font-size: $default-font-size;
 	background-color: $dark-main-bg-color;
 }
+
 .header-app {
 	&__navbar {
 		background-color: $dark-banner-color;
@@ -87,6 +88,9 @@ h4 {
           color: $dark-hover-color !important;
       }
   } */
+}
+.home-container {
+	height: 85vh;
 }
 /*BOOTSTRAP DROPDOWN*/
 .dropdown-menu {
@@ -186,7 +190,7 @@ h4 {
 		display: block;
 	}
 	&__category {
-		font-size: $small-font-size;
+		font-size: $default-font-size;
 		display: block;
 	}
 	&__more {
@@ -229,7 +233,7 @@ h4 {
 		font-size: $header-font-size;
 	}
 	&__category {
-		font-size: $small-font-size;
+		font-size: $default-font-size;
 		color: $orange;
 	}
 

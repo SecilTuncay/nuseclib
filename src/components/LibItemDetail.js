@@ -10,12 +10,12 @@ import {
   removeSelectedItem,
   getIsLoading,
 } from "../features/libitems/libitemsSlice";
-import { manageStock, getAllLibData } from "../features/libitems/libitemsSlice";
+import { getAllLibData } from "../features/libitems/libitemsSlice";
 import {
   fetchAsyncLibItem,
   fetchAllLibData,
 } from "../features/libitems/libitemsSlice";
-import {} from "../features/libitems/libitemsSlice";
+import { } from "../features/libitems/libitemsSlice";
 
 const LibItemDetail = () => {
   const { itemId } = useParams();
@@ -36,12 +36,12 @@ const LibItemDetail = () => {
   const isLoading = useSelector(getIsLoading);
 
   const addToStockHandler = () => {
-    dispatch(
-      manageStock({
-        id,
-        isInStock,
-      })
-    );
+    /*   dispatch(
+        manageStock({
+          id,
+          isInStock,
+        })
+      );*/
   };
 
   return (
@@ -67,7 +67,7 @@ const LibItemDetail = () => {
                     ></Card.Img>
                   </div>
                   <div className="col-sm-7">
-                    <Card.Body>
+                    <Card.Body className="mt-5">
                       <div className="libitem-detail__name mt-3">{name}</div>
                       <div className="libitem-detail__author mt-1">
                         {author}

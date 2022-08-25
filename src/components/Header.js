@@ -1,17 +1,18 @@
 import React, { useEffect } from "react";
 import { Nav, Navbar, NavDropdown, Container } from "react-bootstrap";
-import logoIcon from "../images/logo_icon.png";
+import logoIcon from "./../images/logo_icon.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { fas } from "@fortawesome/free-solid-svg-icons";
 import { useDispatch, useSelector } from "react-redux";
-import { logout } from "../features/libitems/libitemsSlice";
+import { loggedOut } from "../features/libitems/libitemsSlice";
 library.add(fas);
 
 const Header = () => {
   const dispatch = useDispatch();
   const logoutHandler = () => {
-    dispatch(logout());
+    console.log('logoutHandler: ');
+    dispatch(loggedOut());
   };
   return (
     <div className="header-app">
@@ -49,13 +50,26 @@ const Header = () => {
                   <span className="ml-2">Available Items</span>
                 </div>
               </Nav.Link>
+              <Nav.Link eventKey={2} href={`/all`}>
+                <div>
+                  <span className="ml-2">All Items</span>
+                </div>
+              </Nav.Link>
             </Nav>
             <Nav className="ml-auto">
-              <Nav.Link eventKey={2} href={`/login`} onClick={logoutHandler()}>
-                <div className="header-app__signin">
-                  <FontAwesomeIcon icon="fa-solid fa-right-to-bracket" />
+              <Nav.Link eventKey={2} onClick={e => logoutHandler()}>
+                <div>
+                  <FontAwesomeIcon icon="fa-solid fa-right-from-bracket" />
 
                   <span className="ml-2">Log Out</span>
+                </div>
+              </Nav.Link>
+            </Nav>
+            <Nav >
+              <Nav.Link eventKey={2} href={`/signup`}>
+                <div className="header-app__signin">
+                  <FontAwesomeIcon icon="fa-solid fa-right-to-bracket" />
+                  <span className="ml-2">Sign Up</span>
                 </div>
               </Nav.Link>
             </Nav>

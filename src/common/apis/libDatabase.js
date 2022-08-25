@@ -2,5 +2,5 @@ import axios from "axios";
 
 
 export default axios.create({
-  baseURL: "https://my-json-server.typicode.com/SecilTuncay/demo/",
+  baseURL: "http://localhost:3000",
 });

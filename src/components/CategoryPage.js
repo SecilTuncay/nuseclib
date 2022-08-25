@@ -30,7 +30,7 @@ const CategoryPage = () => {
 
   return (
     <>
-      <div className="container movie-wrapper">
+      <div className="container">
         <h1 className="my-4 text-center text-white">
           {categoryNames[categoryId - 1]}
         </h1>
@@ -44,7 +44,7 @@ const CategoryPage = () => {
                 <LibItemCard
                   key={index}
                   itemData={libItem}
-                  //isInStock={isInStock(libItem.id)}
+                //isInStock={isInStock(libItem.id)}
                 />
               ))}
           </div>

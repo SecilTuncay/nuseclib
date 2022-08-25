@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { fas } from "@fortawesome/free-solid-svg-icons";
 import { far } from "@fortawesome/free-regular-svg-icons";
-import { manageStock } from "../features/libitems/libitemsSlice";
+import { deleteItem, updateItem } from "../features/libitems/libitemsSlice";
 import { useDispatch } from "react-redux";
 //import errorImage from "../../images/image-error.png";
 import { Card } from "react-bootstrap";
@@ -16,34 +16,36 @@ const LibItemCard = (props) => {
     itemData;
 
   const dispatch = useDispatch();
-
   const categoryNames = ["Books", "Magazines", "Newspapers"];
 
-  const addToStockHandler = () => {
-    dispatch(
-      manageStock({
-        id,
-        isInStock,
-      })
-    );
+  const updateItemHandler = () => {
+    dispatch(updateItem({ id, name, author, description, productImage, category, isInStock: !isInStock }));
   };
 
   return (
     <div className="col-lg-3 col-md-6 my-2 text-white">
       <Card className="libitem-card" key={id}>
-        <Card.Header className="d-flex justify-content-end libitem-card__header">
-          <span className="libitem-card__btns" onClick={addToStockHandler}>
+        <Card.Header className="d-flex justify-content-between libitem-card__header">
+          <span className="libitem-card__btns" onClick={e => updateItemHandler()}>
             {isInStock ? (
               <div className="text-success">
-                <span className="mr-2">Available</span>
                 <FontAwesomeIcon icon="fa-solid fa-circle-minus" />
+                <span className="mx-2">Available</span>
               </div>
             ) : (
-              <div className="text-danger">
-                <span className="mr-2">Loaned</span>
+              <div className="text-warning">
                 <FontAwesomeIcon icon="fa-solid fa-circle-plus" />
+                <span className="mx-2">Loaned</span>
               </div>
             )}
+          </span>
+          <span className="libitem-card__btns" onClick={e => dispatch(deleteItem(id))}>
+
+            <div className="text-danger">
+              <span className="mx-2">Delete</span>
+              <FontAwesomeIcon icon="fa-solid fa-circle-minus" />
+            </div>
+
           </span>
         </Card.Header>
         <Link
@@ -77,7 +79,7 @@ const LibItemCard = (props) => {
           </div>
         </Card.Body>
       </Card>
-    </div>
+    </div >
   );
 };
 

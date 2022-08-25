@@ -13,8 +13,8 @@ function Categories() {
   }, []);
 
   return (
-    <section className="mt-4">
-      <div className="container d-flex flex-row justify-content-center ">
+    <section className="mt-4 h-25">
+      <div className="container d-flex flex-row justify-content-center align-items-center mt-5 h-100">
         <div className="categories--container d-flex flex-column justify-content-center text-white">
           <h4 className="text-center mb-4">Categories</h4>
           <div className="d-flex flex-row justify-content-center">

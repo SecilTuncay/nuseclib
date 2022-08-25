@@ -7,7 +7,7 @@
 			"description": "A Clockwork Orange is a dystopian satirical black comedy novel by English writer Anthony Burgess, published in 1962.",
 			"productImage": "/images/books/clockworkorange.png",
 			"category": 1,
-			"isInStock": true
+			"isInStock": false
 		},
 		{
 			"id": 2,
@@ -16,7 +16,7 @@
 			"description": "Death on the Nile is a work of detective fiction by British writer Agatha Christie, published in the UK by the Collins Crime Club.",
 			"productImage": "/images/books/death-on-the-nile-poirot.png",
 			"category": 1,
-			"isInStock": false
+			"isInStock": true
 		},
 		{
 			"id": 3,
@@ -25,7 +25,7 @@
 			"description": "Harry Potter has no idea how famous he is. That's because he's being raised by his miserable aunt and uncle who are terrified Harry will learn that he's really a wizard, just as his parents were.",
 			"productImage": "/images/books/harrypotter.png",
 			"category": 1,
-			"isInStock": false
+			"isInStock": true
 		},
 		{
 			"id": 4,
@@ -34,16 +34,14 @@
 			"description": "The unwilling hero of The Hobbit, Bilbo Baggins, is persuaded to join Thorin and his 12 dwarfs to recover their stolen treasure, which is being guarded by the dragon Smaug.",
 			"productImage": "/images/books/hobbit.png",
 			"category": 1,
-			"isInStock": false
+			"isInStock": true
 		},
 		{
-			"id": 5,
-			"name": "The Alchemist",
-			"author": "Paulo Coelho",
-			"description": "The Alchemist is a classic novel in which a boy named Santiago embarks on a journey seeking treasure in the Egyptian pyramids.",
-			"productImage": "/images/books/thealchemist.png",
-			"category": 1,
-			"isInStock": true
+			"firstName": "w3",
+			"lastName": "wwe3",
+			"email": "e@dd.com",
+			"password": "156464",
+			"id": 5
 		},
 		{
 			"id": 6,
@@ -167,7 +165,13 @@
 			"src": "/images/newspaperslider.png"
 		}
 	],
-	"users": [{ "email": "secil@secil.com", "password": "123" }],
+	"users": [
+		{
+			"id": 1,
+			"email": "secil@secil.com",
+			"password": "123"
+		}
+	],
 	"logStatus": [
 		{
 			"isLoggedIn": true,
