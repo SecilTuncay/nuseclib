@@ -7,7 +7,34 @@
       "description": "A Clockwork Orange is a dystopian satirical black comedy novel by English writer Anthony Burgess, published in 1962.",
       "productImage": "/images/books/clockworkorange.png",
       "category": 1,
-      "isInStock": true
+      "isInStock": false
+    },
+    {
+      "id": 2,
+      "name": "Death on the Nile",
+      "author": "Agatha Christie",
+      "description": "Death on the Nile is a work of detective fiction by British writer Agatha Christie, published in the UK by the Collins Crime Club.",
+      "productImage": "/images/books/death-on-the-nile-poirot.png",
+      "category": 1,
+      "isInStock": false
+    },
+    {
+      "id": 3,
+      "name": "Harry Potter And The Sorcerer's Stone",
+      "author": "J.K. Rowling ",
+      "description": "Harry Potter has no idea how famous he is. That's because he's being raised by his miserable aunt and uncle who are terrified Harry will learn that he's really a wizard, just as his parents were.",
+      "productImage": "/images/books/harrypotter.png",
+      "category": 1,
+      "isInStock": false
+    },
+    {
+      "id": 4,
+      "name": "Hobbit",
+      "author": "J. R. R. Tolkien",
+      "description": "The unwilling hero of The Hobbit, Bilbo Baggins, is persuaded to join Thorin and his 12 dwarfs to recover their stolen treasure, which is being guarded by the dragon Smaug.",
+      "productImage": "/images/books/hobbit.png",
+      "category": 1,
+      "isInStock": false
     },
     {
       "id": 5,
@@ -35,6 +62,15 @@
       "productImage": "/images/magazines/bonapetitcover.png",
       "category": 2,
       "isInStock": false
+    },
+    {
+      "id": 8,
+      "name": "Rolling Stone",
+      "author": "Jason Fine",
+      "description": "Rolling Stone is a monthly American magazine focused on popular culture.",
+      "productImage": "/images/magazines/rscover.png",
+      "category": 2,
+      "isInStock": true
     },
     {
       "id": 9,
@@ -133,16 +169,42 @@
   ],
   "users": [
     {
+      "id": 1,
       "firstName": "Seçil",
       "lastName": "Tuncay",
       "email": "secil@secil.com",
       "password": "123"
+    },
+    {
+      "firstName": "Melek",
+      "lastName": "der",
+      "email": "e@d.c",
+      "password": "123",
+      "id": 2
+    },
+    {
+      "firstName": "Mös",
+      "lastName": "e",
+      "email": "secil@secil.com",
+      "password": "123",
+      "id": 3
     }
   ],
   "logStatus": [
     {
       "isLoggedIn": true,
       "id": 1
+    }
+  ],
+  "deneme": [
+    {
+      "id": 1,
+      "name": "Clockwork Orange",
+      "author": "Anthony Burgess",
+      "description": "A Clockwork Orange is a dystopian satirical black comedy novel by English writer Anthony Burgess, published in 1962.",
+      "productImage": "/images/books/clockworkorange.png",
+      "category": 1,
+      "isInStock": true
     }
   ]
 }

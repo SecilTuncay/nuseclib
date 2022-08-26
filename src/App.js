@@ -17,9 +17,8 @@ import { fetchUseStatus, getIsLoggedIn } from "../src/features/libitems/libitems
 
 function App() {
   const isLoggedin = useSelector(getIsLoggedIn);
-  console.log('isLoggedin: ', isLoggedin);
-
   const dispatch = useDispatch();
+
   useEffect(() => {
     dispatch(fetchUseStatus());
   }, [dispatch]);
@@ -31,15 +30,15 @@ function App() {
           isLoggedin ? <Header /> : null
         }
         <Routes>
-          <Route path="/" element={isLoggedin ? <HomeContent /> : <Login />} />
-          <Route path="/login" element={<Login />} />
+          <Route path="/" exact element={<HomeContent />} />
+          <Route path="/login" exact element={<Login />} />
           <Route path="/signup" exact element={<Signup />} />
           <Route path="/available" exact element={<AvailableItems />} />
           <Route path="/all" exact element={<LibItemMainPage />} />
-          <Route path="/error" element={<PageNotFound />} />
-          <Route path="/loading" element={<Loading />} />
-          <Route path="/libitem/:itemId" element={<LibItemDetail />} />
-          <Route path="/category/:categoryId" element={<CategoryPage />} />
+          <Route path="/error" exact element={<PageNotFound />} />
+          <Route path="/loading" exact element={<Loading />} />
+          <Route path="/libitem/:itemId" exact element={<LibItemDetail />} />
+          <Route path="/category/:categoryId" exact element={<CategoryPage />} />
         </Routes>
         {
           isLoggedin ? <Footer /> : null

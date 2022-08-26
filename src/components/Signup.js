@@ -1,11 +1,10 @@
-import React, { useState } from "react";
-import { useDispatch } from "react-redux";
-import { addUser, updateLoggedIn } from "../features/libitems/libitemsSlice";
+import React, { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { addUser, updateLoggedIn, getIsLoggedIn } from "../features/libitems/libitemsSlice";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import loginBack from "../images/login.png";
 import { useNavigate } from "react-router-dom";
-
 
 const Signup = () => {
   const [firstName, setFirstName] = useState("");
@@ -14,14 +13,27 @@ const Signup = () => {
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
   const dispatch = useDispatch();
+  const isLoggedin = useSelector(getIsLoggedIn);
+
 
   const handleSubmit = (e) => {
     console.log('handleSubmit: ');
     e.preventDefault();
-
+    dispatch(addUser({
+      firstName,
+      lastName,
+      email,
+      password
+    }))
     dispatch(updateLoggedIn(true))
     navigate("/");
   };
+
+  useEffect(() => {
+    if (isLoggedin) {
+      navigate("/");
+    }
+  }, [isLoggedin]);
 
   return (
     <>
@@ -32,12 +44,7 @@ const Signup = () => {
               <img className="img-fluid form-container__image" src={loginBack} alt="" />
               <h4 className="mt-4 pl-4">Sign Up</h4>
               <Form className="p-4"
-                onSubmit={(e) => dispatch(addUser({
-                  firstName,
-                  lastName,
-                  email,
-                  password
-                }))}
+                onSubmit={(e) => handleSubmit(e)}
               >
 
                 <Form.Group className="mb-3" controlId="formBasicFirstName">

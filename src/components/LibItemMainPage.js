@@ -8,8 +8,10 @@ import { fetchAllLibData } from "../features/libitems/libitemsSlice";
 import LibItemCard from "./LibItemCard";
 import Loading from "./Loading";
 
-function LibItemMainPage() {
+const LibItemMainPage = () => {
   const dispatch = useDispatch();
+  console.log('dispatch: ', dispatch);
+  const [ignored, forceUpdate] = useReducer(x => x + 1, 0);
   const allLibData = useSelector(getAllLibData);
   console.log("file: LibItemMainPage.js - line 14 - allLibData", allLibData);
   const isLoading = useSelector(getIsLoading);
@@ -30,7 +32,6 @@ function LibItemMainPage() {
               <LibItemCard
                 key={index}
                 itemData={libItem}
-                //isInStock={isInStock(libItem.id)}
               />
             ))}
         </div>

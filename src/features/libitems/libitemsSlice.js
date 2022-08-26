@@ -6,6 +6,7 @@ export const fetchAllLibData = createAsyncThunk(
   "libItems/fetchAllLibData",
   async () => {
     try {
+      debugger
       const response = await libDatabase.get(
         "/items"
       );
@@ -20,6 +21,7 @@ export const fetchAsyncLibItem = createAsyncThunk(
   "libItems/fetchAsyncLibItem",
   async (id) => {
     try {
+
       const response = await libDatabase.get(
         `/items/${id}`
       );
@@ -66,6 +68,21 @@ export const fetchUserData = createAsyncThunk(
       const response = await libDatabase.get(
         "/users"
       );
+      if (response?.status == 200) return response.data;
+      return `${response?.status}:${response?.statusText}:`
+    } catch (err) {
+      return err.message;
+    }
+  }
+);
+export const addUser = createAsyncThunk(
+  "libItems/addUser",
+  async (user) => {
+    try {
+      const response = await libDatabase.post(
+        "/users", (user)
+      );
+
       if (response?.status == 200) return response.data;
       return `${response?.status}:${response?.statusText}:`
     } catch (err) {
@@ -122,22 +139,7 @@ export const updateItem = createAsyncThunk(
     }
   }
 );
-export const addUser = createAsyncThunk(
-  "libItems/addUser",
-  async (user) => {
-    try {
 
-      const response = await libDatabase.post(
-        "/users", (user)
-      );
-      debugger
-      if (response?.status == 200) return response.data;
-      return `${response?.status}:${response?.statusText}:`
-    } catch (err) {
-      return err.message;
-    }
-  }
-);
 export const deleteItem = createAsyncThunk(
   "libItems/deleteItem",
   async (id) => {
@@ -158,7 +160,6 @@ const initialState = {
   item: [],
   sliders: [],
   categories: [],
-  selectedLibItem: {},
   isLoading: true,
 };
 
@@ -183,9 +184,10 @@ const libItemSlice = createSlice({
     /*Fetch Lib Item Data start*/
     [fetchAsyncLibItem.pending]: (state) => {
       console.log("Pending");
+      return { ...state, isLoading: true };
     },
     [fetchAsyncLibItem.fulfilled]: (state, { payload }) => {
-      return { ...state, item: payload };
+      return { ...state, item: payload, isLoading: false };
     },
     [fetchAsyncLibItem.rejected]: () => {
       console.log("Rejected!");
@@ -255,6 +257,17 @@ const libItemSlice = createSlice({
       state.allLibItems = allLibItems;
     },
     [deleteItem.rejected]: () => {
+      console.log("Rejected!");
+    },
+    /*end*/
+    /*Update Item to Library start*/
+    [updateLoggedIn.pending]: (state) => {
+      console.log("Pending");
+    },
+    [updateLoggedIn.fulfilled]: (state, { payload }) => {
+      return { ...state, isLoggedIn: payload };
+    },
+    [updateLoggedIn.rejected]: () => {
       console.log("Rejected!");
     },
     /*end*/

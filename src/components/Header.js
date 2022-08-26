@@ -21,10 +21,9 @@ const Header = () => {
   };
 
   const usersData = useSelector(getUsers);
-  debugger
-  const firstName = "wer"
-  // const { firstName } = usersData[usersData.length - 1];
-  console.log('firstName: ', firstName);
+  const firstName = "swe";
+  //const { firstName } = usersData[usersData.length - 1];
+
   useEffect(() => {
     dispatch(fetchUserData());
   }, []);

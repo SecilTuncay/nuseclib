@@ -6,43 +6,28 @@ import Loading from "./Loading";
 import { Card } from "react-bootstrap";
 import PageNotFound from "./PageNotFound";
 import {
-  getSelectedLibItem,
-  removeSelectedItem,
   getIsLoading,
 } from "../features/libitems/libitemsSlice";
-import { getAllLibData } from "../features/libitems/libitemsSlice";
-import {
-  fetchAsyncLibItem,
-  fetchAllLibData,
-} from "../features/libitems/libitemsSlice";
-import { } from "../features/libitems/libitemsSlice";
+import { getSelectedLibItem, fetchAsyncLibItem } from "../features/libitems/libitemsSlice";
+
 
 const LibItemDetail = () => {
   const { itemId } = useParams();
   const dispatch = useDispatch();
-  const allLibData = useSelector(getAllLibData);
-  const categoryNames = ["Books", "Magazines", "Newspapers"];
-
-  const selectedItem = allLibData.filter((item) => item.id == itemId);
+  const libItemData = useSelector(getSelectedLibItem);
   const { id, name, author, description, productImage, category, isInStock } =
-    selectedItem[0];
-
+    libItemData;
+  debugger
+  const categoryNames = ["Books", "Magazines", "Newspapers"];
   const url = "http://localhost:3000";
 
   useEffect(() => {
-    dispatch(fetchAllLibData());
-  });
+    dispatch(fetchAsyncLibItem(itemId));
+  }, []);
 
   const isLoading = useSelector(getIsLoading);
 
-  const addToStockHandler = () => {
-    /*   dispatch(
-        manageStock({
-          id,
-          isInStock,
-        })
-      );*/
-  };
+
 
   return (
     <div
@@ -66,7 +51,7 @@ const LibItemDetail = () => {
                       src={productImage}
                     ></Card.Img>
                   </div>
-                  <div className="col-sm-7">
+                  <div className="col-sm-7 pr-5">
                     <Card.Body className="mt-5">
                       <div className="libitem-detail__name mt-3">{name}</div>
                       <div className="libitem-detail__author mt-1">
@@ -83,7 +68,7 @@ const LibItemDetail = () => {
                       <div className="mt-4">
                         <span
                           className="libitem-detail__btns mr-2 text-white"
-                          onClick={addToStockHandler}
+
                         >
                           Situation :
                           {isInStock ? (
@@ -92,7 +77,7 @@ const LibItemDetail = () => {
                               <span className="ml-2">Available</span>
                             </div>
                           ) : (
-                            <div className="text-danger mt-2">
+                            <div className="text-warning mt-2">
                               <FontAwesomeIcon icon="fa-solid fa-circle-plus" />
                               <span className="ml-2">Loaned</span>
                             </div>

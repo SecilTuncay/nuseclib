@@ -3,15 +3,24 @@ import { useDispatch, useSelector } from "react-redux";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import loginBack from "../images/login.png";
-import { fetchUserData, getUsers, updateLoggedIn } from "../features/libitems/libitemsSlice";
-
+import { fetchUserData, getUsers, updateLoggedIn, getIsLoggedIn } from "../features/libitems/libitemsSlice";
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const usersData = useSelector(getUsers);
-  console.log('usersData: ', usersData);
+  const tempLog = useSelector(getIsLoggedIn);
+
   const dispatch = useDispatch();
+  const isLoggedin = useSelector(getIsLoggedIn);
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (isLoggedin) {
+      navigate("/");
+    }
+  }, [isLoggedin]);
 
   useEffect(() => {
     dispatch(fetchUserData());
@@ -19,10 +28,9 @@ const Login = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
     const matched = usersData.filter(data => data.email === email && data.password === password);
     if (matched) {
-      dispatch(updateLoggedIn(true))
+      dispatch(updateLoggedIn(true));
     }
   };
 
