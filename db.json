@@ -141,7 +141,7 @@
 	],
 	"logStatus": [
 		{
-			"isLoggedIn": true,
+			"isLoggedIn": false,
 			"id": 1
 		}
 	]
