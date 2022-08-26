@@ -18,7 +18,7 @@ import { fetchUseStatus, getIsLoggedIn } from "../src/features/libitems/libitems
 function App() {
   const isLoggedin = useSelector(getIsLoggedIn);
   console.log('isLoggedin: ', isLoggedin);
-  debugger
+
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(fetchUseStatus());
@@ -26,11 +26,12 @@ function App() {
 
   return (
     <div className="AppWrapper d-flex flex-column min-vh-100">
-      {
-        isLoggedin ? <Header /> : null
-      }
+
 
       <BrowserRouter>
+        {
+          isLoggedin ? <Header /> : null
+        }
         <Routes>
           <Route path="/" element={isLoggedin ? <HomeContent /> : <Login />} />
           <Route path="/login" element={<Login />} />
@@ -42,10 +43,10 @@ function App() {
           <Route path="/libitem/:itemId" element={<LibItemDetail />} />
           <Route path="/category/:categoryId" element={<CategoryPage />} />
         </Routes>
+        {
+          isLoggedin ? <Footer /> : null
+        }
       </BrowserRouter>
-      {
-        isLoggedin ? <Footer /> : null
-      }
 
     </div>
   );
