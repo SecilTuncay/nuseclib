@@ -45,7 +45,6 @@ export const fetchSliderData = createAsyncThunk(
     }
   }
 );
-
 export const fetchCategoryData = createAsyncThunk(
   "libItems/fetchCategoryData",
   async () => {
@@ -91,22 +90,22 @@ export const fetchUseStatus = createAsyncThunk(
 );
 export const updateLoggedIn = createAsyncThunk(
   "libItems/updateLoggedIn",
-  async () => {
+  async (status) => {
     try {
+
       const response = await libDatabase.put(
         "/logStatus/1", ({
-          "isLoggedIn": true
+          "isLoggedIn": status
         })
       );
 
-      if (response?.status == 200) return response.data;
+      if (response?.status == 200) return status;
       return `${response?.status}:${response?.statusText}:`
     } catch (err) {
       return err.message;
     }
   }
 );
-
 export const updateItem = createAsyncThunk(
   "libItems/updateItem",
   async (item) => {
@@ -127,11 +126,11 @@ export const addUser = createAsyncThunk(
   "libItems/addUser",
   async (user) => {
     try {
-      debugger
+
       const response = await libDatabase.post(
         "/users", (user)
       );
-
+      debugger
       if (response?.status == 200) return response.data;
       return `${response?.status}:${response?.statusText}:`
     } catch (err) {
@@ -167,8 +166,6 @@ const libItemSlice = createSlice({
   name: "libItems",
   initialState,
   reducers: {
-
-
   },
   extraReducers: {
     /*Fetch All Library Data start*/

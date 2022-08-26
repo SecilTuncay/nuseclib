@@ -34,7 +34,7 @@
 			"description": "The unwilling hero of The Hobbit, Bilbo Baggins, is persuaded to join Thorin and his 12 dwarfs to recover their stolen treasure, which is being guarded by the dragon Smaug.",
 			"productImage": "/images/books/hobbit.png",
 			"category": 1,
-			"isInStock": false
+			"isInStock": true
 		},
 		{
 			"id": 5,
@@ -167,7 +167,14 @@
 			"src": "/images/newspaperslider.png"
 		}
 	],
-	"users": [{ "email": "secil@secil.com", "password": "123" }],
+	"users": [
+		{
+			"firstName": "Seçil",
+			"lastName": "Tuncay",
+			"email": "secil@secil.com",
+			"password": "123"
+		}
+	],
 	"logStatus": [
 		{
 			"isLoggedIn": true,

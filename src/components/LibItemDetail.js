@@ -31,7 +31,7 @@ const LibItemDetail = () => {
 
   useEffect(() => {
     dispatch(fetchAllLibData());
-  }, [dispatch, isInStock]);
+  });
 
   const isLoading = useSelector(getIsLoading);
 

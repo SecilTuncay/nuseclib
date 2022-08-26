@@ -92,6 +92,17 @@ h4 {
 .home-container {
 	height: 85vh;
 }
+.profile {
+	&_image {
+		height: 40px;
+		width: 40px;
+		border-radius: 50%;
+	}
+
+	&_name {
+		font-size: 1rem;
+	}
+}
 /*BOOTSTRAP DROPDOWN*/
 .dropdown-menu {
 	top: 100%;

@@ -5,15 +5,34 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { fas } from "@fortawesome/free-solid-svg-icons";
 import { useDispatch, useSelector } from "react-redux";
-import { loggedOut } from "../features/libitems/libitemsSlice";
+import { useNavigate } from "react-router-dom";
+import { updateLoggedIn, fetchUseStatus, getIsLoggedIn, fetchUserData, getUsers } from "../features/libitems/libitemsSlice";
+import profilePhoto from "../images/profile.png";
 library.add(fas);
 
 const Header = () => {
   const dispatch = useDispatch();
+  const isLoggedin = useSelector(getIsLoggedIn);
+  const navigate = useNavigate();
   const logoutHandler = () => {
     console.log('logoutHandler: ');
-    dispatch(loggedOut());
+    dispatch(updateLoggedIn(false));
+    navigate("/");
   };
+
+  const usersData = useSelector(getUsers);
+  debugger
+  const firstName = "wer"
+  // const { firstName } = usersData[usersData.length - 1];
+  console.log('firstName: ', firstName);
+  useEffect(() => {
+    dispatch(fetchUserData());
+  }, []);
+
+  useEffect(() => {
+    dispatch(fetchUseStatus());
+  }, [dispatch]);
+
   return (
     <div className="header-app">
       <Navbar
@@ -57,26 +76,25 @@ const Header = () => {
               </Nav.Link>
             </Nav>
             <Nav className="ml-auto">
+              <Nav.Link>
+                <div className="text-white mr-2 profile">
+                  <img className="mr-3 profile_image" src={profilePhoto} alt="" />
+                  <span >{firstName}</span>
+                </div>
+              </Nav.Link>
               <Nav.Link eventKey={2} onClick={e => logoutHandler()}>
-                <div>
+                <div className="header-app__signin">
                   <FontAwesomeIcon icon="fa-solid fa-right-from-bracket" />
 
-                  <span className="ml-2">Log Out</span>
                 </div>
               </Nav.Link>
             </Nav>
-            <Nav >
-              <Nav.Link eventKey={2} href={`/signup`}>
-                <div className="header-app__signin">
-                  <FontAwesomeIcon icon="fa-solid fa-right-to-bracket" />
-                  <span className="ml-2">Sign Up</span>
-                </div>
-              </Nav.Link>
-            </Nav>
+
+
           </Navbar.Collapse>
         </Container>
       </Navbar>
-    </div>
+    </div >
   );
 };
 

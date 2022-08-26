@@ -26,8 +26,6 @@ function App() {
 
   return (
     <div className="AppWrapper d-flex flex-column min-vh-100">
-
-
       <BrowserRouter>
         {
           isLoggedin ? <Header /> : null

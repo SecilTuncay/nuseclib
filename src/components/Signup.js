@@ -1,27 +1,26 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
-import { addUser } from "../features/libitems/libitemsSlice";
+import { addUser, updateLoggedIn } from "../features/libitems/libitemsSlice";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
-import loginBack from "../images/login.png"
+import loginBack from "../images/login.png";
+import { useNavigate } from "react-router-dom";
+
 
 const Signup = () => {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-
+  const navigate = useNavigate();
   const dispatch = useDispatch();
 
   const handleSubmit = (e) => {
     console.log('handleSubmit: ');
     e.preventDefault();
-    dispatch(addUser({
-      firstName,
-      lastName,
-      email,
-      password
-    }))
+
+    dispatch(updateLoggedIn(true))
+    navigate("/");
   };
 
   return (
@@ -33,46 +32,55 @@ const Signup = () => {
               <img className="img-fluid form-container__image" src={loginBack} alt="" />
               <h4 className="mt-4 pl-4">Sign Up</h4>
               <Form className="p-4"
-                onSubmit={(e) => handleSubmit(e)}
+                onSubmit={(e) => dispatch(addUser({
+                  firstName,
+                  lastName,
+                  email,
+                  password
+                }))}
               >
 
                 <Form.Group className="mb-3" controlId="formBasicFirstName">
-                  <Form.Label>First Name</Form.Label>
+
                   <Form.Control
                     type="name"
                     placeholder="First Name"
                     value={firstName}
                     onChange={(e) => setFirstName(e.target.value)}
+                    required
                   />
                 </Form.Group>
 
                 <Form.Group className="mb-3" controlId="formBasicLastName">
-                  <Form.Label>Last Name</Form.Label>
+
                   <Form.Control
                     type="name"
                     placeholder="Last Name"
                     value={lastName}
                     onChange={(e) => setLastName(e.target.value)}
+                    required
                   />
                 </Form.Group>
 
                 <Form.Group className="mb-3" controlId="formBasicEmail">
-                  <Form.Label>Email</Form.Label>
+
                   <Form.Control
                     type="email"
                     placeholder="Your Email"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
+                    required
                   />
                 </Form.Group>
 
                 <Form.Group className="mb-3" controlId="formBasicPassword">
-                  <Form.Label>Password</Form.Label>
+
                   <Form.Control
                     type="password"
                     placeholder="Password"
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
+                    required
                   />
                 </Form.Group>
 

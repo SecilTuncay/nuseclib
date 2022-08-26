@@ -11,22 +11,17 @@ import { Card } from "react-bootstrap";
 library.add(fas, far);
 
 const LibItemCard = (props) => {
+  const dispatch = useDispatch();
   const { itemData } = props;
   const { id, name, author, description, productImage, category, isInStock } =
     itemData;
-
-  const dispatch = useDispatch();
   const categoryNames = ["Books", "Magazines", "Newspapers"];
-
-  const updateItemHandler = () => {
-    dispatch(updateItem({ id, name, author, description, productImage, category, isInStock: !isInStock }));
-  };
 
   return (
     <div className="col-lg-3 col-md-6 my-2 text-white">
       <Card className="libitem-card" key={id}>
         <Card.Header className="d-flex justify-content-between libitem-card__header">
-          <span className="libitem-card__btns" onClick={e => updateItemHandler()}>
+          <span className="libitem-card__btns" onClick={e => dispatch(updateItem({ id, name, author, description, productImage, category, isInStock: !isInStock }))}>
             {isInStock ? (
               <div className="text-success">
                 <FontAwesomeIcon icon="fa-solid fa-circle-minus" />
@@ -40,12 +35,10 @@ const LibItemCard = (props) => {
             )}
           </span>
           <span className="libitem-card__btns" onClick={e => dispatch(deleteItem(id))}>
-
             <div className="text-danger">
               <span className="mx-2">Delete</span>
               <FontAwesomeIcon icon="fa-solid fa-circle-minus" />
             </div>
-
           </span>
         </Card.Header>
         <Link
