@@ -133,6 +133,7 @@
 	],
 	"users": [
 		{
+			"id": 1,
 			"firstName": "Seçil",
 			"lastName": "Tuncay",
 			"email": "secil@secil.com",
@@ -141,7 +142,7 @@
 	],
 	"logStatus": [
 		{
-			"isLoggedIn": true,
+			"isLoggedIn": false,
 			"id": 1
 		}
 	]
