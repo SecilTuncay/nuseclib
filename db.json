@@ -10,15 +10,6 @@
       "isInStock": true
     },
     {
-      "id": 3,
-      "name": "Harry Potter And The Sorcerer's Stone",
-      "author": "J.K. Rowling ",
-      "description": "Harry Potter has no idea how famous he is. That's because he's being raised by his miserable aunt and uncle who are terrified Harry will learn that he's really a wizard, just as his parents were.",
-      "productImage": "/images/books/harrypotter.png",
-      "category": 1,
-      "isInStock": false
-    },
-    {
       "id": 5,
       "name": "The Alchemist",
       "author": "Paulo Coelho",
@@ -150,7 +141,7 @@
   ],
   "logStatus": [
     {
-      "isLoggedIn": false,
+      "isLoggedIn": true,
       "id": 1
     }
   ]
