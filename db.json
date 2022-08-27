@@ -1,185 +1,176 @@
 {
-  "items": [
-    {
-      "id": 1,
-      "name": "Clockwork Orange",
-      "author": "Anthony Burgess",
-      "description": "A Clockwork Orange is a dystopian satirical black comedy novel by English writer Anthony Burgess, published in 1962.",
-      "productImage": "/images/books/clockworkorangec.png",
-      "category": 1,
-      "isInStock": true
-    },
-    {
-      "id": 2,
-      "name": "Death on the Nile",
-      "author": "Agatha Christie",
-      "description": "Death on the Nile is a work of detective fiction by British writer Agatha Christie, published in the UK by the Collins Crime Club.",
-      "productImage": "/images/books/death-on-the-nile-poirotc.png",
-      "category": 1,
-      "isInStock": false
-    },
-    {
-      "id": 3,
-      "name": "Harry Potter And The Sorcerer's Stone",
-      "author": "J.K. Rowling ",
-      "description": "Harry Potter has no idea how famous he is. That's because he's being raised by his miserable aunt and uncle who are terrified Harry will learn that he's really a wizard, just as his parents were.",
-      "productImage": "/images/books/harrypotterc.png",
-      "category": 1,
-      "isInStock": false
-    },
-    {
-      "id": 4,
-      "name": "Hobbit",
-      "author": "J. R. R. Tolkien",
-      "description": "The unwilling hero of The Hobbit, Bilbo Baggins, is persuaded to join Thorin and his 12 dwarfs to recover their stolen treasure, which is being guarded by the dragon Smaug.",
-      "productImage": "/images/books/hobbitc.png",
-      "category": 1,
-      "isInStock": true
-    },
-    {
-      "id": 5,
-      "name": "The Alchemist",
-      "author": "Paulo Coelho",
-      "description": "The Alchemist is a classic novel in which a boy named Santiago embarks on a journey seeking treasure in the Egyptian pyramids.",
-      "productImage": "/images/books/thealchemistc.png",
-      "category": 1,
-      "isInStock": true
-    },
-    {
-      "id": 6,
-      "name": "Better Homes & Gardens",
-      "author": "Stephen Orr",
-      "description": "Better Homes & Gardens is your go-to destination for home decor advice, DIY projects, gardening, cleaning tips, and recipes.",
-      "productImage": "/images/magazines/bhgcoverc.png",
-      "category": 2,
-      "isInStock": false
-    },
-    {
-      "id": 7,
-      "name": "Bon Appétit",
-      "author": "Dawn Davis",
-      "description": "Cook with confidence. Enjoy your food. Find recipes, search our encyclopedia of cooking tips and ingredients.",
-      "productImage": "/images/magazines/bonapetitcoverc.png",
-      "category": 2,
-      "isInStock": false
-    },
-    {
-      "id": 8,
-      "name": "Rolling Stone",
-      "author": "Jason Fine",
-      "description": "Rolling Stone is a monthly American magazine focused on popular culture.",
-      "productImage": "/images/magazines/rscoverc.png",
-      "category": 2,
-      "isInStock": true
-    },
-    {
-      "id": 9,
-      "name": "National Geographic",
-      "author": "Susan Goldberg",
-      "description": "Monthly magazine of geography, archaeology, anthropology, and exploration.",
-      "productImage": "/images/magazines/nationalgeographiccoverc.png",
-      "category": 2,
-      "isInStock": false
-    },
-    {
-      "id": 11,
-      "name": "Financial Times",
-      "author": "Roula Khalaf",
-      "description": "An international British business newspaper. It is a newspaper published in London. Periodically 24 places.",
-      "productImage": "/images/newspapers/financialtimesc.png",
-      "category": 3,
-      "isInStock": false
-    },
-    {
-      "id": 11,
-      "name": "New York Times",
-      "author": "Joe Kahn",
-      "description": "The New York Times is an American daily newspaper founded on September 18, 1851 and printed in New York City.",
-      "productImage": "/images/newspapers/nytimesc.png",
-      "category": 3,
-      "isInStock": true
-    },
-    {
-      "id": 12,
-      "name": "The Guardian",
-      "author": "George Harrison",
-      "description": "The Guardian is a British daily newspaper. It was founded in 1821 by the Scott Trust as The Manchester Guardian.",
-      "productImage": "/images/newspapers/the-guardianc.png",
-      "category": 3,
-      "isInStock": false
-    },
-    {
-      "id": 13,
-      "name": "The Times",
-      "author": "Alice Hope",
-      "description": "The Times is a British newspaper founded in 1785. It has been coming out under this name since 1788.",
-      "productImage": "/images/newspapers/thetimesc.png",
-      "category": 3,
-      "isInStock": true
-    },
-    {
-      "id": 14,
-      "name": "Washington Post",
-      "author": "Alice Cooper",
-      "description": "The Washington Post is the largest and oldest newspaper in Washington, the capital of the United States.",
-      "productImage": "/images/newspapers/Washington_Postc.png",
-      "category": 3,
-      "isInStock": false
-    },
-    {
-      "name": "Simyacı",
-      "author": "dert",
-      "description": "wertert",
-      "productImage": "/images/dummyimage.png",
-      "category": 2,
-      "isInStock": true,
-      "id": 15
-    }
-  ],
-  "categories": [
-    {
-      "id": 1,
-      "name": "Books",
-      "description": "Books: Lorem ipsum dolor sit amet!"
-    },
-    {
-      "id": 2,
-      "name": "Magazines",
-      "description": "Magazines: Consectetur adipisicing elit?"
-    },
-    {
-      "id": 3,
-      "name": "Newspapers",
-      "description": "News Papers: Sit itaque quisquam dolore."
-    }
-  ],
-  "sliders": [
-    {
-      "productId": 2,
-      "src": "/images/bookslider.png"
-    },
-    {
-      "productId": 8,
-      "src": "/images/magazineslider.png"
-    },
-    {
-      "productId": 4,
-      "src": "/images/newspaperslider.png"
-    }
-  ],
-  "users": [
-    {
-      "id": 1,
-      "firstName": "Seçil",
-      "lastName": "Tuncay",
-      "email": "secil@secil.com",
-      "password": "123"
-    }
-  ],
-  "logStatus": [
-    {
-      "isLoggedIn": true,
-      "id": 1
-    }
-  ]
+	"items": [
+		{
+			"id": 1,
+			"name": "Clockwork Orange",
+			"author": "Anthony Burgess",
+			"description": "A Clockwork Orange is a dystopian satirical black comedy novel by English writer Anthony Burgess, published in 1962.",
+			"productImage": "/images/books/clockworkorangec.png",
+			"category": 1,
+			"isInStock": true
+		},
+		{
+			"id": 2,
+			"name": "Death on the Nile",
+			"author": "Agatha Christie",
+			"description": "Death on the Nile is a work of detective fiction by British writer Agatha Christie, published in the UK by the Collins Crime Club.",
+			"productImage": "/images/books/death-on-the-nile-poirotc.png",
+			"category": 1,
+			"isInStock": false
+		},
+		{
+			"id": 3,
+			"name": "Harry Potter And The Sorcerer's Stone",
+			"author": "J.K. Rowling ",
+			"description": "Harry Potter has no idea how famous he is. That's because he's being raised by his miserable aunt and uncle who are terrified Harry will learn that he's really a wizard, just as his parents were.",
+			"productImage": "/images/books/harrypotterc.png",
+			"category": 1,
+			"isInStock": false
+		},
+		{
+			"id": 4,
+			"name": "Hobbit",
+			"author": "J. R. R. Tolkien",
+			"description": "The unwilling hero of The Hobbit, Bilbo Baggins, is persuaded to join Thorin and his 12 dwarfs to recover their stolen treasure, which is being guarded by the dragon Smaug.",
+			"productImage": "/images/books/hobbitc.png",
+			"category": 1,
+			"isInStock": true
+		},
+		{
+			"id": 5,
+			"name": "The Alchemist",
+			"author": "Paulo Coelho",
+			"description": "The Alchemist is a classic novel in which a boy named Santiago embarks on a journey seeking treasure in the Egyptian pyramids.",
+			"productImage": "/images/books/thealchemistc.png",
+			"category": 1,
+			"isInStock": true
+		},
+		{
+			"id": 6,
+			"name": "Better Homes & Gardens",
+			"author": "Stephen Orr",
+			"description": "Better Homes & Gardens is your go-to destination for home decor advice, DIY projects, gardening, cleaning tips, and recipes.",
+			"productImage": "/images/magazines/bhgcoverc.png",
+			"category": 2,
+			"isInStock": false
+		},
+		{
+			"id": 7,
+			"name": "Bon Appétit",
+			"author": "Dawn Davis",
+			"description": "Cook with confidence. Enjoy your food. Find recipes, search our encyclopedia of cooking tips and ingredients.",
+			"productImage": "/images/magazines/bonapetitcoverc.png",
+			"category": 2,
+			"isInStock": false
+		},
+		{
+			"id": 8,
+			"name": "Rolling Stone",
+			"author": "Jason Fine",
+			"description": "Rolling Stone is a monthly American magazine focused on popular culture.",
+			"productImage": "/images/magazines/rscoverc.png",
+			"category": 2,
+			"isInStock": true
+		},
+		{
+			"id": 9,
+			"name": "National Geographic",
+			"author": "Susan Goldberg",
+			"description": "Monthly magazine of geography, archaeology, anthropology, and exploration.",
+			"productImage": "/images/magazines/nationalgeographiccoverc.png",
+			"category": 2,
+			"isInStock": false
+		},
+		{
+			"id": 11,
+			"name": "Financial Times",
+			"author": "Roula Khalaf",
+			"description": "An international British business newspaper. It is a newspaper published in London. Periodically 24 places.",
+			"productImage": "/images/newspapers/financialtimesc.png",
+			"category": 3,
+			"isInStock": false
+		},
+		{
+			"id": 11,
+			"name": "New York Times",
+			"author": "Joe Kahn",
+			"description": "The New York Times is an American daily newspaper founded on September 18, 1851 and printed in New York City.",
+			"productImage": "/images/newspapers/nytimesc.png",
+			"category": 3,
+			"isInStock": true
+		},
+		{
+			"id": 12,
+			"name": "The Guardian",
+			"author": "George Harrison",
+			"description": "The Guardian is a British daily newspaper. It was founded in 1821 by the Scott Trust as The Manchester Guardian.",
+			"productImage": "/images/newspapers/the-guardianc.png",
+			"category": 3,
+			"isInStock": false
+		},
+		{
+			"id": 13,
+			"name": "The Times",
+			"author": "Alice Hope",
+			"description": "The Times is a British newspaper founded in 1785. It has been coming out under this name since 1788.",
+			"productImage": "/images/newspapers/thetimesc.png",
+			"category": 3,
+			"isInStock": true
+		},
+		{
+			"id": 14,
+			"name": "Washington Post",
+			"author": "Alice Cooper",
+			"description": "The Washington Post is the largest and oldest newspaper in Washington, the capital of the United States.",
+			"productImage": "/images/newspapers/Washington_Postc.png",
+			"category": 3,
+			"isInStock": false
+		}
+	],
+	"categories": [
+		{
+			"id": 1,
+			"name": "Books",
+			"description": "Books: Lorem ipsum dolor sit amet!"
+		},
+		{
+			"id": 2,
+			"name": "Magazines",
+			"description": "Magazines: Consectetur adipisicing elit?"
+		},
+		{
+			"id": 3,
+			"name": "Newspapers",
+			"description": "News Papers: Sit itaque quisquam dolore."
+		}
+	],
+	"sliders": [
+		{
+			"productId": 2,
+			"src": "/images/bookslider.png"
+		},
+		{
+			"productId": 8,
+			"src": "/images/magazineslider.png"
+		},
+		{
+			"productId": 4,
+			"src": "/images/newspaperslider.png"
+		}
+	],
+	"users": [
+		{
+			"id": 1,
+			"firstName": "Seçil",
+			"lastName": "Tuncay",
+			"email": "secil@secil.com",
+			"password": "123"
+		}
+	],
+	"logStatus": [
+		{
+			"isLoggedIn": false,
+			"id": 1
+		}
+	]
 }
