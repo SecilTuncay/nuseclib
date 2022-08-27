@@ -17,7 +17,7 @@ const LibItemDetail = () => {
   const libItemData = useSelector(getSelectedLibItem);
   const { id, name, author, description, productImage, category, isInStock } =
     libItemData;
-  debugger
+
   const categoryNames = ["Books", "Magazines", "Newspapers"];
   const url = "http://localhost:3000";
 

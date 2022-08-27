@@ -30,7 +30,7 @@ const CategoryPage = () => {
 
   return (
     <>
-      <div className="container">
+      <div className="container all-container">
         <h1 className="my-4 text-center text-white">
           {categoryNames[categoryId - 1]}
         </h1>

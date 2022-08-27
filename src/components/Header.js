@@ -21,9 +21,7 @@ const Header = () => {
   };
 
   const usersData = useSelector(getUsers);
-  const firstName = "swe";
-  //const { firstName } = usersData[usersData.length - 1];
-
+  const allName = usersData ? usersData[0].firstName + " " + usersData[0].lastName : "hello";
   useEffect(() => {
     dispatch(fetchUserData());
   }, []);
@@ -63,11 +61,7 @@ const Header = () => {
               </NavDropdown>
             </Nav>
             <Nav className="me-auto">
-              <Nav.Link eventKey={2} href={`/available`}>
-                <div>
-                  <span className="ml-2">Available Items</span>
-                </div>
-              </Nav.Link>
+
               <Nav.Link eventKey={2} href={`/all`}>
                 <div>
                   <span className="ml-2">All Items</span>
@@ -78,7 +72,7 @@ const Header = () => {
               <Nav.Link>
                 <div className="text-white mr-2 profile">
                   <img className="mr-3 profile_image" src={profilePhoto} alt="" />
-                  <span >{firstName}</span>
+                  <span >{allName}</span>
                 </div>
               </Nav.Link>
               <Nav.Link eventKey={2} onClick={e => logoutHandler()}>

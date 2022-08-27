@@ -9,11 +9,11 @@ import Loading from "./components/Loading";
 import HomeContent from "./components/HomeContent";
 import LibItemMainPage from "./components/LibItemMainPage";
 import LibItemDetail from "./components/LibItemDetail";
-import AvailableItems from "./components/AvailableItems";
 import "./App.scss";
 import CategoryPage from "./components/CategoryPage";
 import Signup from "./components/Signup";
 import { fetchUseStatus, getIsLoggedIn } from "../src/features/libitems/libitemsSlice";
+import AddItem from "./components/AddItem";
 
 function App() {
   const isLoggedin = useSelector(getIsLoggedIn);
@@ -32,8 +32,8 @@ function App() {
         <Routes>
           <Route path="/" exact element={<HomeContent />} />
           <Route path="/login" exact element={<Login />} />
+          <Route path="/addItem" exact element={<AddItem />} />
           <Route path="/signup" exact element={<Signup />} />
-          <Route path="/available" exact element={<AvailableItems />} />
           <Route path="/all" exact element={<LibItemMainPage />} />
           <Route path="/error" exact element={<PageNotFound />} />
           <Route path="/loading" exact element={<Loading />} />

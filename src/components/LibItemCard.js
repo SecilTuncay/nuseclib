@@ -12,17 +12,26 @@ library.add(fas, far);
 
 const LibItemCard = (props) => {
   const dispatch = useDispatch();
+
   const { itemData } = props;
   const { id, name, author, description, productImage, category, isInStock } =
     itemData;
+  const [tempIsInStock, setTempIsInStock] = useState(isInStock);
   const categoryNames = ["Books", "Magazines", "Newspapers"];
+
+
 
   return (
     <div className="col-lg-3 col-md-6 my-2 text-white">
       <Card className="libitem-card" key={id}>
         <Card.Header className="d-flex justify-content-between libitem-card__header">
-          <span className="libitem-card__btns" onClick={e => dispatch(updateItem({ id, name, author, description, productImage, category, isInStock: !isInStock }))}>
-            {isInStock ? (
+          <span className="libitem-card__btns"
+            onClick={e => {
+              setTempIsInStock(!tempIsInStock);
+              dispatch(updateItem({ id, name, author, description, productImage, category, isInStock: !isInStock }))
+            }}
+          >
+            {tempIsInStock ? (
               <div className="text-success">
                 <FontAwesomeIcon icon="fa-solid fa-circle-minus" />
                 <span className="mx-2">Available</span>

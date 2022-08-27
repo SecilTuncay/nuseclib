@@ -27,7 +27,7 @@ function HomeContent() {
   return (
     <>
 
-      <div className="mt-4 home-container">
+      <div className="home-container">
         <Slider />
         <Categories />
       </div>

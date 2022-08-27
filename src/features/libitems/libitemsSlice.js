@@ -6,7 +6,6 @@ export const fetchAllLibData = createAsyncThunk(
   "libItems/fetchAllLibData",
   async () => {
     try {
-      debugger
       const response = await libDatabase.get(
         "/items"
       );
@@ -78,9 +77,26 @@ export const fetchUserData = createAsyncThunk(
 export const addUser = createAsyncThunk(
   "libItems/addUser",
   async (user) => {
+
     try {
       const response = await libDatabase.post(
         "/users", (user)
+      );
+
+      if (response?.status == 200) return response.data;
+      return `${response?.status}:${response?.statusText}:`
+    } catch (err) {
+      return err.message;
+    }
+  }
+);
+export const addItem = createAsyncThunk(
+  "libItems/addItem",
+  async (item) => {
+
+    try {
+      const response = await libDatabase.post(
+        "/items", (item)
       );
 
       if (response?.status == 200) return response.data;
@@ -108,6 +124,7 @@ export const fetchUseStatus = createAsyncThunk(
 export const updateLoggedIn = createAsyncThunk(
   "libItems/updateLoggedIn",
   async (status) => {
+
     try {
 
       const response = await libDatabase.put(
@@ -139,7 +156,6 @@ export const updateItem = createAsyncThunk(
     }
   }
 );
-
 export const deleteItem = createAsyncThunk(
   "libItems/deleteItem",
   async (id) => {
@@ -160,7 +176,7 @@ const initialState = {
   item: [],
   sliders: [],
   categories: [],
-  isLoading: true,
+  isLoading: true
 };
 
 const libItemSlice = createSlice({
@@ -248,6 +264,17 @@ const libItemSlice = createSlice({
       console.log("Rejected!");
     },
     /*end*/
+    /*Add Users  start*/
+    [addItem.pending]: (state) => {
+      console.log("Pending");
+    },
+    [addItem.fulfilled]: (state, { payload }) => {
+      return { ...state, allLibItems: payload };
+    },
+    [addItem.rejected]: () => {
+      console.log("Rejected!");
+    },
+    /*end*/
     /*Delete Item to Library start*/
     [deleteItem.pending]: (state) => {
       console.log("Pending");
@@ -285,7 +312,7 @@ const libItemSlice = createSlice({
   },
 });
 
-export const { login, logout, addItem, loggedIn, loggedOut } =
+export const { itemStatusClicked } =
   libItemSlice.actions;
 
 export const getAllLibData = (state) => state.libItems.allLibItems;

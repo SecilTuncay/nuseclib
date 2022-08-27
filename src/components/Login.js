@@ -10,10 +10,9 @@ const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const usersData = useSelector(getUsers);
-  const tempLog = useSelector(getIsLoggedIn);
-
   const dispatch = useDispatch();
   const isLoggedin = useSelector(getIsLoggedIn);
+  const [isError, setIsError] = useState(isLoggedin);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -27,10 +26,11 @@ const Login = () => {
   }, []);
 
   const handleSubmit = (e) => {
-    e.preventDefault();
     const matched = usersData.filter(data => data.email === email && data.password === password);
-    if (matched) {
+    if (matched.length > 0) {
       dispatch(updateLoggedIn(true));
+    } else {
+      setIsError(true);
     }
   };
 
@@ -39,6 +39,10 @@ const Login = () => {
       <div className="container form-container">
         <div className="row justify-content-center align-items-center h-100">
           <div className="col-md-7 col-lg-5">
+            {isError ? (
+              <div className="text-white h-100">Your Information doesnot match. Please try again :) </div>
+            ) : (<></>)}
+
             <div className="form-container__wrap mx-auto">
               <img className="img-fluid form-container__image" src={loginBack} alt="" />
               <h4 className="mt-4 pl-4">Log In</h4>
