@@ -21,7 +21,7 @@ const Header = () => {
   };
 
   const usersData = useSelector(getUsers);
-  const allName = usersData ? usersData[0].firstName + " " + usersData[0].lastName : "hello";
+  const allName = usersData ? usersData[0].firstName + " " + usersData[0].lastName : "";
   useEffect(() => {
     dispatch(fetchUserData());
   }, []);
