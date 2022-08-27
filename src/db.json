@@ -10,6 +10,33 @@
 			"isInStock": true
 		},
 		{
+			"id": 2,
+			"name": "Death on the Nile",
+			"author": "Agatha Christie",
+			"description": "Death on the Nile is a work of detective fiction by British writer Agatha Christie, published in the UK by the Collins Crime Club.",
+			"productImage": "/images/books/death-on-the-nile-poirot.png",
+			"category": 1,
+			"isInStock": false
+		},
+		{
+			"id": 3,
+			"name": "Harry Potter And The Sorcerer's Stone",
+			"author": "J.K. Rowling ",
+			"description": "Harry Potter has no idea how famous he is. That's because he's being raised by his miserable aunt and uncle who are terrified Harry will learn that he's really a wizard, just as his parents were.",
+			"productImage": "/images/books/harrypotter.png",
+			"category": 1,
+			"isInStock": false
+		},
+		{
+			"id": 4,
+			"name": "Hobbit",
+			"author": "J. R. R. Tolkien",
+			"description": "The unwilling hero of The Hobbit, Bilbo Baggins, is persuaded to join Thorin and his 12 dwarfs to recover their stolen treasure, which is being guarded by the dragon Smaug.",
+			"productImage": "/images/books/hobbit.png",
+			"category": 1,
+			"isInStock": true
+		},
+		{
 			"id": 5,
 			"name": "The Alchemist",
 			"author": "Paulo Coelho",
@@ -35,6 +62,15 @@
 			"productImage": "/images/magazines/bonapetitcover.png",
 			"category": 2,
 			"isInStock": false
+		},
+		{
+			"id": 8,
+			"name": "Rolling Stone",
+			"author": "Jason Fine",
+			"description": "Rolling Stone is a monthly American magazine focused on popular culture.",
+			"productImage": "/images/magazines/rscover.png",
+			"category": 2,
+			"isInStock": true
 		},
 		{
 			"id": 9,
@@ -133,7 +169,6 @@
 	],
 	"users": [
 		{
-			"id": 2,
 			"firstName": "Seçil",
 			"lastName": "Tuncay",
 			"email": "secil@secil.com",
@@ -142,7 +177,7 @@
 	],
 	"logStatus": [
 		{
-			"isLoggedIn": false,
+			"isLoggedIn": true,
 			"id": 1
 		}
 	]
