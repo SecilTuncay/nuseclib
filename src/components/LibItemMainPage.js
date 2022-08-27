@@ -13,9 +13,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const LibItemMainPage = (props) => {
   const dispatch = useDispatch();
-  console.log('dispatch: ', dispatch);
   const allLibData = useSelector(getAllLibData);
-  console.log("file: LibItemMainPage.js - line 14 - allLibData", allLibData);
   const isLoading = useSelector(getIsLoading);
 
   useEffect(() => {

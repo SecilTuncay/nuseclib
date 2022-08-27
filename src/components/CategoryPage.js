@@ -11,7 +11,7 @@ import Loading from "./Loading";
 
 const CategoryPage = () => {
   const { categoryId } = useParams();
-  console.log("categoryId: ", categoryId);
+
   const dispatch = useDispatch();
   const allLibData = useSelector(getAllLibData);
   const isLoading = useSelector(getIsLoading);

@@ -7,7 +7,6 @@ import { useDispatch, useSelector } from "react-redux";
 function Slider() {
   const dispatch = useDispatch();
   const sliderInfo = useSelector(getSliderData);
-  console.log("file: Slider.js - line 11 - sliderInfo", sliderInfo);
 
   useEffect(() => {
     dispatch(fetchSliderData());
@@ -20,7 +19,7 @@ function Slider() {
           {sliderInfo &&
             sliderInfo.map((slider) => {
               const { productId, src } = slider;
-              console.log("src: ", src);
+
               return (
                 <Carousel.Item key={productId} interval={1500}>
                   <Nav>

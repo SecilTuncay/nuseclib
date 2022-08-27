@@ -15,7 +15,7 @@ const Header = () => {
   const isLoggedin = useSelector(getIsLoggedIn);
   const navigate = useNavigate();
   const logoutHandler = () => {
-    console.log('logoutHandler: ');
+
     dispatch(updateLoggedIn(false));
     navigate("/");
   };

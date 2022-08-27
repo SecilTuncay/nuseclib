@@ -7,7 +7,7 @@ import loginBack from "../images/login.png";
 import { useNavigate } from "react-router-dom";
 
 const AddItem = () => {
-  console.log('AddItem: ');
+
   const [name, setName] = useState("");
   const [author, setAuthor] = useState("");
   const [description, setDescription] = useState("");

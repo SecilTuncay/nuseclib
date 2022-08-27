@@ -17,7 +17,7 @@ const Signup = () => {
 
 
   const handleSubmit = (e) => {
-    console.log('handleSubmit: ');
+
     e.preventDefault();
     dispatch(addUser({
       firstName,
