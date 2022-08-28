@@ -79,13 +79,13 @@ const AddItem = () => {
                     <option value="3">Newspaper</option>
                   </Form.Select>
                 </Form.Group>
-                <Form.Group className="mb-3" controlId="status-id">
+                <Form.Group controlId="status-id">
                   <Form.Check type="switch" id="status-switch" label="Is Available?" onChange={(e) => setIsInStock(e.target.checked)} />
                 </Form.Group>
                 <Button
                   variant="primary"
                   type="submit"
-                  className="form-control btn btn-primary w-100 mt-4"
+                  className="form-control btn btn-primary w-100"
                 >
                   Add Item
                 </Button>

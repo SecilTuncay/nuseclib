@@ -5,7 +5,7 @@ import { faTwitter, faLinkedin, faInstagram } from "@fortawesome/free-brands-svg
 function Footer() {
   return (
     <footer>
-      <div className="container d-md-flex p-3 justify-content-between align-items-center">
+      <div className="container d-md-flex p-1 justify-content-between align-items-center">
         <div className="me-md-auto text-center text-md-start">
           <div>
             <span>NuSEC Library </span>&copy; All Rights Reserved.
